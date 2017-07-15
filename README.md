@@ -88,8 +88,6 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 The quality of these is admittedly questionable.
 
-![kirk](images/coords_kirk.png)
-
 ![mouth](images/coords_mouth.png)
 
 ![hampton](images/coords_hampton.png)
@@ -109,5 +107,7 @@ The quality of these is admittedly questionable.
 ![inver](images/coords_inver.png)
 
 ![worth](images/coords_worth.png)
+
+![kirk](images/coords_kirk.png)
 
 ![bourne](images/coords_bourne.png)

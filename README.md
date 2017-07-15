@@ -90,6 +90,8 @@ The quality of these is admittedly questionable.
 
 ![kirk](images/coords_kirk.png)
 
-![kirk](images/coords_mouth.png)
+![mouth](images/coords_mouth.png)
 
-![kirk](images/coords_hampton.png)
+![hampton](images/coords_hampton.png)
+
+![aber](images/coords_aber.png)

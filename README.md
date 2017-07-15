@@ -108,6 +108,8 @@ The quality of these is admittedly questionable.
 
 ![worth](images/coords_worth.png)
 
+![heath](images/coords_heath.png)
+
 ![kirk](images/coords_kirk.png)
 
 ![bourne](images/coords_bourne.png)

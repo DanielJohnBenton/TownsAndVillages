@@ -9,7 +9,7 @@ let _config = {
 	},
 	ngrams: {
 		position: "ENDS", // STARTS, ENDS, ENTIRE
-		output: "LETTERS", // LETTERS
+		output: "LETTERS-ALPHABETICALLY", // LETTERS-ALPHABETICALLY LETTERS-COUNT
 		minimum: 1,
 		maximum: 1
 	}
@@ -118,32 +118,22 @@ else if(_config.mode == "NGRAMS")
 		}
 	}
 	
-	if(_config.ngrams.output == "LETTERS")
+	if(_config.ngrams.output == "LETTERS-ALPHABETICALLY") // min=1 max=1
 	{
-		/*pieces.sort(
-			function(a, b)
-			{
-				return (a.ngram.charCodeAt(0) - b.ngram.charCodeAt(0));
-			}
-		);*/
-		
 		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 		let output = "";
 		
-		for(let az = 0, z = (letters.length - 1); az <= z; az++)
+		for(let letter in letters)
 		{
-			output += letters[az] +"\t";
+			output += letters[letter] +"\t";
 			
 			let found = false;
-			
 			for(let iPieces = 0, nPieces = pieces.length; iPieces < nPieces; iPieces++)
 			{
-				if(pieces[iPieces].ngram == letters[az])
+				if(pieces[iPieces].ngram == letters[letter])
 				{
 					output += pieces[iPieces].count +"\n";
-					
 					found = true;
-					
 					break;
 				}
 			}
@@ -154,8 +144,49 @@ else if(_config.mode == "NGRAMS")
 			}
 		}
 		
-		__fs.writeFileSync("output/output_"+ _config.ngrams.position.toLowerCase() +"_letters.txt", output, "utf8");
+		__fs.writeFileSync("output/output_"+ _config.ngrams.position.toLowerCase() +"_letters_alphabetically.txt", output, "utf8");
+		
+		console.log(pieces);
+	}
+	else if(_config.ngrams.output == "LETTERS-COUNT") // min=1 max=1
+	{
+		pieces.sort(
+			function(a, b)
+			{
+				return (b.count - a.count);
+			}
+		);
+		
+		let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+		let output = "";
+		
+		let foundLetters = "";
+		
+		for(let iPieces = 0, nPieces = pieces.length; iPieces < nPieces; iPieces++)
+		{
+			foundLetters += pieces[iPieces].ngram;
+			
+			output += pieces[iPieces].ngram +"\t"+ pieces[iPieces].count +"\n";
+		}
+		
+		for(let letter in letters)
+		{
+			if(foundLetters.indexOf(letters[letter]) == -1)
+			{
+				output += letters[letter] +"\t0\n";
+			}
+		}
+		
+		__fs.writeFileSync("output/output_"+ _config.ngrams.position.toLowerCase() +"_letters_count.txt", output, "utf8");
 		
 		console.log(pieces);
 	}
 }
+
+
+
+
+
+
+
+

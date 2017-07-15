@@ -88,4 +88,4 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 The quality of these is admittedly questionable.
 
-![kirk](coords_kirk.png)
+![kirk](images/coords_kirk.png)

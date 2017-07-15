@@ -14,6 +14,7 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
+		ngram: "bury"
 	}
 };
 
@@ -285,7 +286,7 @@ else if(_config.mode == "COORDINATES")
 	
 	__fs.writeFileSync("output/coordinates_"+ _config.coordinates.ngram.toLowerCase() +".txt", output, "utf8");
 	
-	console.log(positives.length +" items saved.");
+	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"'.");
 }	
 
 

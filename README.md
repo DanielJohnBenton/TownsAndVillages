@@ -86,6 +86,6 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 ## Places containing n-grams
 
-The quality of these is questionable.
+The quality of these is admittedly questionable.
 
 ![kirk](coords_kirk.png)

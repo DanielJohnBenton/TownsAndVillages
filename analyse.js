@@ -8,8 +8,8 @@ let _config = {
 		display: 15
 	},
 	ngrams: {
-		position: "ENDS", // STARTS, ENDS, ENTIRE
-		output: "LETTERS-ALPHABETICALLY", // LETTERS-ALPHABETICALLY, LETTERS-COUNT
+		position: "ENTIRE", // STARTS, ENDS, ENTIRE
+		output: "LETTERS-COUNT", // LETTERS-ALPHABETICALLY, LETTERS-COUNT
 		minimum: 1,
 		maximum: 1
 	}
@@ -95,6 +95,13 @@ else if(_config.mode == "NGRAMS")
 			else if(_config.ngrams.position == "STARTS")
 			{
 				ngrams.push(letters.substr(0, size));
+			}
+			else if(_config.ngrams.position == "ENTIRE")
+			{
+				for(let iLetters = 0, xLastLetter = (letters.length - (size - 1)); iLetters < xLastLetter; iLetters++)
+				{
+					ngrams.push(letters.substr(iLetters, size));
+				}
 			}
 			
 			for(let iNgrams in ngrams)

@@ -71,8 +71,11 @@ for(let i = 0; i < nTowns; i++)
 	details = details.split(" ");
 	
 	let north = details[0];
-	let west = details[1];
+	let east = details[1];
 	let code = details[2];
+	
+	north = north.slice(0, -1) - 0;
+	east = (east.charAt(east.length - 1) == "W" ? (east.slice(0, -1) - 0) * -1 : (east.slice(0, -1) - 0));
 	
 	data.push(
 		{
@@ -80,7 +83,7 @@ for(let i = 0; i < nTowns; i++)
 			alias: alias,
 			county: county,
 			north: north,
-			west: west,
+			east: east,
 			code: code
 		}
 	);

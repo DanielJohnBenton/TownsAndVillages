@@ -3,7 +3,7 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "NGRAMS", // LENGTHS, NGRAMS
+	mode: "COORDINATES", // LENGTHS, NGRAMS, COORDINATES
 	lengths: {
 		display: 15
 	},
@@ -12,6 +12,9 @@ let _config = {
 		output: "", // [blank], LETTERS-ALPHABETICALLY, LETTERS-COUNT
 		minimum: 1,
 		maximum: 1
+	},
+	coordinates: {
+		ngram: "kirk"
 	}
 };
 
@@ -248,6 +251,67 @@ else if(_config.mode == "LETTERFREQUENCY")
 	__fs.writeFileSync("output/letterfrequencies.txt", output, "utf8");
 	console.log(output);
 }
+else if(_config.mode == "COORDINATES")
+{
+	let positives = data.filter(
+		function(item)
+		{
+			return (LettersOnly(item.name).toLowerCase().indexOf(_config.coordinates.ngram.toLowerCase()) != -1);
+		}
+	);
+	
+	let output = "East (A)\t";
+	
+	for(let town in positives)
+	{
+		output += positives[town].east;
+		
+		if(town < (positives.length - 1))
+		{
+			output +="\t";
+		}
+	}
+	
+	output +="\nNorth (A)\t";
+	
+	for(let town in positives)
+	{
+		output += positives[town].north;
+		
+		if(town < (positives.length - 1))
+		{
+			output +="\t";
+		}
+	}
+	
+	output +="\nEast (B)\t";
+	
+	for(let town in data)
+	{
+		output += data[town].east;
+		
+		if(town < (data.length - 1))
+		{
+			output +="\t";
+		}
+	}
+	
+	output +="\nNorth (B)\t";
+	
+	for(let town in data)
+	{
+		output += data[town].north;
+		
+		if(town < (data.length - 1))
+		{
+			output +="\t";
+		}
+	}
+	
+	__fs.writeFileSync("output/coordinates_"+ _config.coordinates.ngram.toLowerCase() +".txt", output, "utf8");
+	
+	console.log(positives.length +" items saved.");
+}	
 
 
 

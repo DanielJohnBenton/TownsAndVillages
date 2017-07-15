@@ -83,3 +83,9 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 | EL (3455)           |           | WE (2412) | IEL (860)  | OUGH (447)  | GHTON (219)  | HFIELD (95)  | LITTLEW (55)  | EYCOMMON (30)  | 
 | NG (3410)           |           | BR (2375) | DGE (860)  | SGRE (443)  | HURCH (212)  | TFIELD (95)  | CHURCHE (55)  | LITTLETO (30)  | 
 | RO (3349)           |           | SH (2351) | ERS (830)  | HALL (439)  | CHURC (212)  | HIGHER (92)  | DDLETON (54)  | CKINGTON (30)  | 
+
+## Places containing n-grams
+
+The quality of these is questionable.
+
+![kirk](coords_kirk.png)

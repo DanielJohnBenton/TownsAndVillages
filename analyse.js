@@ -260,7 +260,7 @@ else if(_config.mode == "COORDINATES")
 		}
 	);
 	
-	let output = "East (A)\t";
+	let output = ""
 	
 	for(let town in positives)
 	{
@@ -272,37 +272,13 @@ else if(_config.mode == "COORDINATES")
 		}
 	}
 	
-	output +="\nNorth (A)\t";
+	output +="\n";
 	
 	for(let town in positives)
 	{
 		output += positives[town].north;
 		
 		if(town < (positives.length - 1))
-		{
-			output +="\t";
-		}
-	}
-	
-	output +="\nEast (B)\t";
-	
-	for(let town in data)
-	{
-		output += data[town].east;
-		
-		if(town < (data.length - 1))
-		{
-			output +="\t";
-		}
-	}
-	
-	output +="\nNorth (B)\t";
-	
-	for(let town in data)
-	{
-		output += data[town].north;
-		
-		if(town < (data.length - 1))
 		{
 			output +="\t";
 		}

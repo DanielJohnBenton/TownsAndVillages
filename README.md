@@ -103,3 +103,5 @@ The quality of these is admittedly questionable.
 ![ingdon](images/coords_ingdon.png)
 
 ![thorp](images/coords_thorp.png)
+
+![thames](images/coords_thames.png)

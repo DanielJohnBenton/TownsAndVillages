@@ -88,13 +88,17 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 The quality of these is admittedly questionable.
 
-![mouth](images/coords_mouth.png)
+![sea](images/coords_sea.png)
 
-![mouth](images/coords_loch_lake_llyn.png)
+![loch, lake, llyn](images/coords_loch_lake_llyn.png)
 
 ![hampton](images/coords_hampton.png)
 
 ![aber](images/coords_aber.png)
+
+![mouth](images/coords_mouth.png)
+
+![inver](images/coords_inver.png)
 
 ![bury](images/coords_bury.png)
 
@@ -105,8 +109,6 @@ The quality of these is admittedly questionable.
 ![thorp](images/coords_thorp.png)
 
 ![thames](images/coords_thames.png)
-
-![inver](images/coords_inver.png)
 
 ![worth](images/coords_worth.png)
 

@@ -96,6 +96,8 @@ The quality of these is admittedly questionable.
 
 ![aber](images/coords_aber.png)
 
-![aber](images/coords_bury.png)
+![bury](images/coords_bury.png)
 
-![aber](images/coords_green.png)
+![green](images/coords_green.png)
+
+![ingdon](images/coords_ingdon.png)

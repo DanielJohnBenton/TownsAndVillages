@@ -90,6 +90,8 @@ The quality of these is admittedly questionable.
 
 ![mouth](images/coords_mouth.png)
 
+![mouth](images/coords_loch_lake_llyn.png)
+
 ![hampton](images/coords_hampton.png)
 
 ![aber](images/coords_aber.png)

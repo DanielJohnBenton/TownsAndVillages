@@ -14,7 +14,6 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
-		ngram: "kirk"
 	}
 };
 

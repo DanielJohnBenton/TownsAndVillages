@@ -6,4 +6,4 @@
 
 ![Occurrences of letters](images/entire_letters_by_count.png)
 
-![Letter frequencies vs general English](images/letter_frequences.png)
+![Letter frequencies vs general English](images/letter_frequencies.png)

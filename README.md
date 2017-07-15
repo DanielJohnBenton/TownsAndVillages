@@ -110,4 +110,4 @@ The quality of these is admittedly questionable.
 
 ![worth](images/coords_worth.png)
 
-![inver](images/coords_bourne.png)
+![bourne](images/coords_bourne.png)

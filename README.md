@@ -39,7 +39,7 @@
 
 ## Most frequent n-grams per size
 
-| Mixed (1-8 letters) | 1 letters | 2 letters | 3 letters  | 4 letters   | 5 letters    | 6 letters    | 7 letters     | 8 letters      | 
+| Mixed (1-8 letters) | 1 letter  | 2 letters | 3 letters  | 4 letters   | 5 letters    | 6 letters    | 7 letters     | 8 letters      | 
 |---------------------|-----------|-----------|------------|-------------|--------------|--------------|---------------|----------------| 
 | E (43293)           | E (43293) | ON (9067) | TON (6446) | REEN (1977) | GREEN (1962) | INGTON (867) | BOROUGH (179) | TONGREEN (113) | 
 | O (33904)           | O (33904) | TO (8115) | ILL (2631) | GREE (1972) | NGTON (887)  | BRIDGE (563) | LINGTON (171) | LEYGREEN (111) | 

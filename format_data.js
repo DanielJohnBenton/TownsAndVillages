@@ -1,3 +1,8 @@
+/*
+	Data clean-up notes
+	Must fix "Kirkby - In - Ashfield" to be able to split name from details.
+*/
+
 "use strict";
 
 let __fs = require("fs");

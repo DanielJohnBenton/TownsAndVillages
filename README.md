@@ -105,3 +105,7 @@ The quality of these is admittedly questionable.
 ![thorp](images/coords_thorp.png)
 
 ![thames](images/coords_thames.png)
+
+![inver](images/coords_inver.png)
+
+![inver](images/coords_bourne.png)

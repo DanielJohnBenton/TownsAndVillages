@@ -3,15 +3,15 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "LETTERFREQUENCY", // LENGTHS, NGRAMS
+	mode: "NGRAMS", // LENGTHS, NGRAMS
 	lengths: {
 		display: 15
 	},
 	ngrams: {
 		position: "ENTIRE", // STARTS, ENDS, ENTIRE
-		output: "", // LETTERS-ALPHABETICALLY, LETTERS-COUNT
-		minimum: 2,
-		maximum: 10
+		output: "", // [blank], LETTERS-ALPHABETICALLY, LETTERS-COUNT
+		minimum: 1,
+		maximum: 1
 	}
 };
 
@@ -190,6 +190,26 @@ else if(_config.mode == "NGRAMS")
 			
 			console.log(pieces);
 		}
+	}
+	else
+	{
+		pieces.sort(
+			function(a, b)
+			{
+				return ((b.count - a.count) || (a.ngram.length - b.ngram.length));
+			}
+		);
+		
+		let output = "";
+		
+		for(let piece in pieces)
+		{
+			output += pieces[piece].ngram +" ("+ pieces[piece].count +")\n";
+		}
+		
+		__fs.writeFileSync("output/output_"+ _config.ngrams.position.toLowerCase() +"_ngrams_"+ _config.ngrams.minimum +"-"+ _config.ngrams.maximum +"_count.txt", output, "utf8");
+		
+		console.log(pieces.length +" items saved.");
 	}
 }
 else if(_config.mode == "LETTERFREQUENCY")

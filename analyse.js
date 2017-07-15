@@ -3,15 +3,15 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "NGRAMS", // LENGTHS, NGRAMS
+	mode: "LETTERFREQUENCY", // LENGTHS, NGRAMS
 	lengths: {
 		display: 15
 	},
 	ngrams: {
 		position: "ENTIRE", // STARTS, ENDS, ENTIRE
-		output: "LETTERS-COUNT", // LETTERS-ALPHABETICALLY, LETTERS-COUNT
-		minimum: 1,
-		maximum: 1
+		output: "", // LETTERS-ALPHABETICALLY, LETTERS-COUNT
+		minimum: 2,
+		maximum: 10
 	}
 };
 
@@ -191,6 +191,42 @@ else if(_config.mode == "NGRAMS")
 			console.log(pieces);
 		}
 	}
+}
+else if(_config.mode == "LETTERFREQUENCY")
+{
+	let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+	let counts = [];
+	
+	for(let letter in alphabet)
+	{
+		counts["_"+ alphabet[letter]] = 0;
+	}
+	
+	for(let i = 0, n = data.length; i < n; i++)
+	{
+		let letters = LettersOnly(data[i].name).toLowerCase().split("");
+		
+		for(let letter in letters)
+		{
+			counts["_"+ letters[letter]]++;
+		}
+	}
+	
+	let total = 0;
+	for(let letter in alphabet)
+	{
+		total += counts["_"+ alphabet[letter]];
+	}
+	
+	let output = "";
+	
+	for(let letter in alphabet)
+	{
+		output += alphabet[letter] +"\t"+ ((counts["_"+ alphabet[letter]] / total) * 100) +"%\n";
+	}
+	
+	__fs.writeFileSync("output/letterfrequencies.txt", output, "utf8");
+	console.log(output);
 }
 
 

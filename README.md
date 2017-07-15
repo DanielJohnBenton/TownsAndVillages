@@ -95,3 +95,5 @@ The quality of these is admittedly questionable.
 ![hampton](images/coords_hampton.png)
 
 ![aber](images/coords_aber.png)
+
+![aber](images/coords_bury.png)

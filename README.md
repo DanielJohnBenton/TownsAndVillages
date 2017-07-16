@@ -119,8 +119,8 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 
 ![worth](images/coords_worth.png)
 
-![holm](images/coords_holm.png)
-
 ![heath](images/coords_heath.png)
+
+![holm](images/coords_holm.png)
 
 ![bourne](images/coords_bourne.png)

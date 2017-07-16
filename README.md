@@ -94,7 +94,7 @@ The quality of these is admittedly questionable.
 
 The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meaning_and_etymology) is very interesting and explains why its usage stretches south not only into England but also [mainland Europe](https://en.wikipedia.org/wiki/Dunkirk#Etymology_and_language_use). It seems less that 'kirk' is a Scottish word and mostly that 'church' is an English word. The Old Norse influenced places may be in the more [Viking-riddled areas](https://en.wikipedia.org/wiki/Danelaw) of England.
 
-![Danelaw](images/danelaw.png)
+![Danelaw](images/danelaw_map.png)
 (Source: [Wikipedia](https://en.wikipedia.org/wiki/Danelaw)))
 
 ![sea](images/coords_sea.png)

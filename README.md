@@ -131,6 +131,10 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![chester, cester, caster](images/coords_chester_cester_caster.png)
 
+'Cester' seems like a southern variation, and 'caster' a northern variation. Uses of 'chester' itself reach up to the Antonine Wall.
+
+![Antonine Wall](images/antonine_wall.png)
+
 ![combe](images/coords_combe.png)
 
 ![heath](images/coords_heath.png)

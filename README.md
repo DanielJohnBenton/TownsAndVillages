@@ -115,6 +115,8 @@ Few surprises here: a well-defined line is drawn around parts of the coast with 
 
 ![green](images/coords_green.png)
 
+Terms "bury" and "green" mostly occupy non-Danelaw areas of England.
+
 ![ingdon](images/coords_ingdon.png)
 
 ![thorp](images/coords_thorp.png)

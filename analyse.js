@@ -14,7 +14,7 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
-		ngram: "llew",
+		ngram: "pond",
 		copy: true
 	}
 };
@@ -292,7 +292,7 @@ else if(_config.mode == "COORDINATES")
 	
 	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"'.");
 	
-	if(_config.coordinates.copy)
+	if(_config.coordinates.copy && positives.length > 0)
 	{
 		require("clipboardy").writeSync(output);
 		

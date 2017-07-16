@@ -107,11 +107,7 @@ Few surprises here: a well-defined line is drawn around parts of the coast with 
 
 ![hampton](images/coords_hampton.png)
 
-![aber](images/coords_aber.png)
-
-![mouth](images/coords_mouth.png)
-
-![inver](images/coords_inver.png)
+![inver, mouth, aber](images/coords_inver_mouth_aber)
 
 "Aber", "Mouth", and "Inver" all refer to river mouths. Interesting to note that "Aber" is shared between Scotland and Wales, while "Inver" is exclusively Scottish.
 

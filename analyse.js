@@ -14,7 +14,8 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
-		ngram: "pond",
+		ngram: "burgh",
+		position: "ENDS", // ENDS, ENTIRE
 		copy: true
 	}
 };
@@ -254,11 +255,25 @@ else if(_config.mode == "LETTERFREQUENCY")
 }
 else if(_config.mode == "COORDINATES")
 {
-	let positives = data.filter(
-		function(item)
+	let filterEnds = function(item)
+	{
+		let letters = LettersOnly(item.name).toLowerCase();
+		
+		if(letters.length < _config.coordinates.ngram.length)
 		{
-			return (LettersOnly(item.name).toLowerCase().indexOf(_config.coordinates.ngram.toLowerCase()) != -1);
+			return false;
 		}
+		
+		return (letters.slice(letters.length - _config.coordinates.ngram.length, letters.length) == _config.coordinates.ngram);
+	}
+	
+	let filterEntire = function(item)
+	{
+		return (LettersOnly(item.name).toLowerCase().indexOf(_config.coordinates.ngram.toLowerCase()) != -1);
+	}
+	
+	let positives = data.filter(
+		((_config.coordinates.position == "ENDS") ? filterEnds : filterEntire)
 	);
 	
 	let output = ""

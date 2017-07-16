@@ -63,6 +63,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![pool](images/coords_pool.png)
 
+![cwm](images/coords_cwm.png)
+
 ## Frequency analysis
 
 ![Start and end letters](images/start_and_end_letters.png)

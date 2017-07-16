@@ -103,7 +103,7 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 
 ![sea](images/coords_sea.png)
 
-Few surprises here, a well-defined line is drawn around parts of the coast with place names mentioning the sea.
+Few surprises here: a well-defined line is drawn around parts of the coast with place names mentioning the sea.
 
 ![hampton](images/coords_hampton.png)
 

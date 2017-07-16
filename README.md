@@ -99,9 +99,11 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 
 ![holm](images/coords_holm.png)
 
-Another Old Norse term that fits this pattern.
+"Holm" - another Old Norse term that fits this pattern.
 
 ![sea](images/coords_sea.png)
+
+Few surprises here, a well-defined line is drawn around parts of the coast with place names mentioning the sea.
 
 ![hampton](images/coords_hampton.png)
 
@@ -110,6 +112,8 @@ Another Old Norse term that fits this pattern.
 ![mouth](images/coords_mouth.png)
 
 ![inver](images/coords_inver.png)
+
+"Aber", "Mouth", and "Inver" all refer to river mouths. Interesting to note that "Aber" is shared between Scotland and Wales, while "Inver" is exclusively Scottish.
 
 ![bury](images/coords_bury.png)
 

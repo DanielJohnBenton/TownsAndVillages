@@ -305,7 +305,7 @@ else if(_config.mode == "COORDINATES")
 		__fs.writeFileSync("output/coordinates_"+ _config.coordinates.ngram.toLowerCase() +".txt", output, "utf8");
 	}
 	
-	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"'.");
+	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"' position: "+ _config.coordinates.position +".");
 	
 	if(_config.coordinates.copy && positives.length > 0)
 	{

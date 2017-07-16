@@ -29,11 +29,9 @@ Few surprises here: a well-defined line is drawn around parts of the coast with 
 
 "Aber", "Mouth", and "Inver" all refer to river mouths. Interesting to note that "Aber" is shared between Scotland and Wales, while "Inver" is exclusively Scottish.
 
-![bury](images/coords_bury.png)
-
 ![green](images/coords_green.png)
 
-Terms "bury" and "green" mostly occupy non-Danelaw areas of England.
+"Green" appears to mostly occupy non-Danelaw areas of England.
 
 ![ingdon](images/coords_ingdon.png)
 

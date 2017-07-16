@@ -88,9 +88,11 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 The quality of these is admittedly questionable.
 
-![sea](images/coords_sea.png)
-
 ![loch, lake, llyn](images/coords_loch_lake_llyn.png)
+
+![kirk, church, eglwys](images/kirk_church_eglwys.png)
+
+![sea](images/coords_sea.png)
 
 ![hampton](images/coords_hampton.png)
 
@@ -113,7 +115,5 @@ The quality of these is admittedly questionable.
 ![worth](images/coords_worth.png)
 
 ![heath](images/coords_heath.png)
-
-![kirk](images/coords_kirk.png)
 
 ![bourne](images/coords_bourne.png)

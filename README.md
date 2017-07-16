@@ -95,7 +95,7 @@ The quality of these is admittedly questionable.
 The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meaning_and_etymology) is very interesting and explains why its usage stretches south not only into England but also [mainland Europe](https://en.wikipedia.org/wiki/Dunkirk#Etymology_and_language_use). It seems less that 'kirk' is a Scottish word and mostly that 'church' is an English word. The Old Norse influenced places may be in the more [Viking-riddled areas](https://en.wikipedia.org/wiki/Danelaw) of England.
 
 ![Danelaw](images/danelaw_map.png)
-(Source: [Wikipedia](https://en.wikipedia.org/wiki/Danelaw)))
+(Source: [Wikipedia](https://en.wikipedia.org/wiki/Danelaw))
 
 ![holm](images/coords_holm.png)
 
@@ -133,7 +133,7 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 'Cester' seems like a southern variation, and 'caster' a northern variation. Uses of '[chester](https://en.wikipedia.org/wiki/Chester_(placename_element))' itself reach up to the [Antonine Wall](https://en.wikipedia.org/wiki/Antonine_Wall).
 
-![Antonine Wall](images/antonine_wall.png)
+![Antonine Wall](images/antonine_wall.png) (Source: [Wikipedia](https://en.wikipedia.org/wiki/Antonine_Wall))
 
 ![combe](images/coords_combe.png)
 

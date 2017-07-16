@@ -123,6 +123,8 @@ Few surprises here: a well-defined line is drawn around parts of the coast with 
 
 ![thorp](images/coords_thorp.png)
 
+I suspect this to be [another Danelaw term](https://en.wiktionary.org/wiki/thorp#Etymology).
+
 ![thames](images/coords_thames.png)
 
 ![worth](images/coords_worth.png)

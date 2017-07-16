@@ -14,7 +14,8 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
-		ngram: "testwillnotfind"
+		ngram: "llew",
+		copy: true
 	}
 };
 
@@ -290,6 +291,13 @@ else if(_config.mode == "COORDINATES")
 	}
 	
 	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"'.");
+	
+	if(_config.coordinates.copy)
+	{
+		require("clipboardy").writeSync(output);
+		
+		console.log("Copied to clipboard.");
+	}
 }	
 
 

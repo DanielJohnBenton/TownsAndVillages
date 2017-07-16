@@ -1,0 +1,15 @@
+{
+  "name": "townsandvillages",
+  "version": "1.0.0",
+  "description": "Frequency and (physical) location analysis on n-grams in British place names",
+  "main": "analyse.js",
+  "dependencies": {
+    "clipboardy": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node analyse"
+  },
+  "author": "Daniel John Benton",
+  "license": "ISC"
+}

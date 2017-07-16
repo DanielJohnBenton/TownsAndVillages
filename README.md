@@ -97,6 +97,10 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 ![Danelaw](images/danelaw_map.png)
 (Source: [Wikipedia](https://en.wikipedia.org/wiki/Danelaw)))
 
+![holm](images/coords_holm.png)
+
+Another Old Norse term that fits this pattern.
+
 ![sea](images/coords_sea.png)
 
 ![hampton](images/coords_hampton.png)
@@ -120,7 +124,5 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 ![worth](images/coords_worth.png)
 
 ![heath](images/coords_heath.png)
-
-![holm](images/coords_holm.png)
 
 ![bourne](images/coords_bourne.png)

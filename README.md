@@ -21,6 +21,8 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 
 Few surprises here: a well-defined line is drawn around parts of the coast with place names mentioning the sea.
 
+![bury, borough, burgh, brough](images/coords_bury_borough_burgh_brough.png)
+
 ![hampton](images/coords_hampton.png)
 
 ![inver, mouth, aber](images/coords_inver_mouth_aber.png)

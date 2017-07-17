@@ -159,7 +159,7 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 
 ## Lengths of names
 
-![lengths of names](images/lengths_distribution)
+![lengths of names](images/lengths_distribution.png)
 
 ## Links
 

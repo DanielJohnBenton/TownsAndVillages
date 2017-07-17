@@ -3,7 +3,7 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "COORDINATES", // LENGTHS, NGRAMS, COORDINATES
+	mode: "LENGTHS", // LENGTHS, NGRAMS, COORDINATES
 	lengths: {
 		display: 15
 	},
@@ -14,7 +14,7 @@ let _config = {
 		maximum: 1
 	},
 	coordinates: {
-		ngram: "burgh",
+		ngram: "regis",
 		position: "ENDS", // ENDS, ENTIRE
 		copy: true
 	}
@@ -54,9 +54,35 @@ if(_config.mode == "LENGTHS")
 	data.sort(
 		function(a, b)
 		{
-			return (a.name.length - b.name.length);
+			return (LettersOnly(a.name).length - LettersOnly(b.name).length);
 		}
 	);
+	
+	let start = LettersOnly(data[0].name).length;
+	let end = LettersOnly(data[data.length - 1].name).length;
+	
+	let counts = [];
+	
+	for(let i = 1; i <= end; i++)
+	{
+		counts["_"+ i] = 0;
+	}
+	
+	for(let i in data)
+	{
+		counts["_"+ LettersOnly(data[i].name).length]++;
+	}
+	
+	let output = "Length\tCount\n";
+	
+	for(let i = 1; i <= end; i++)
+	{
+		output += i +"\t"+ counts["_"+ i] +"\n";
+	}
+	
+	__fs.writeFileSync("output/length_counts.txt", output.trim(), "utf8");
+	
+	console.log(counts);
 	
 	let shortestTowns = data.slice(0, _config.lengths.display);
 	let longestTowns = data.slice(data.length - _config.lengths.display, data.length).reverse();

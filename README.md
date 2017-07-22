@@ -107,6 +107,19 @@ Notes:
 
 ![lengths of names](images/lengths_distribution.png)
 
-## Links
+## Interesting links
+- [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia
+- [The Zipf Mystery](https://www.youtube.com/watch?v=fCn8zs912OE)
 
-- 
+## Thanks to
+- [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - [Mike Simpson's Genealogy Site](http://freepages.genealogy.rootsweb.ancestry.com/~agene/)
+- [clipboardy](https://github.com/sindresorhus/clipboardy) - copy/paste library for Node.js
+- [CSV to Markdown Table Generator](https://donatstudios.com/CsvToMarkdownTable) - Donat Studios
+- [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia
+- [Sindre Sorhus on Stack Overflow](https://stackoverflow.com/questions/7778539/copy-to-clipboard-in-node-js/43153941#43153941) - Copy to clipboard in Node.js?
+- [Ore4444 on Stack Overflow](https://stackoverflow.com/questions/9961502/is-there-a-way-to-automatically-build-the-package-json-file-for-node-js-projects/13728837#13728837) - Is there a way to automatically build the package.json file for Node.js projects
+
+## Technologies used
+- Code in JavaScript/Node.js
+- Third-party libraries: [clipboardy](https://github.com/sindresorhus/clipboardy)
+- Graphs made in Microsoft Excel

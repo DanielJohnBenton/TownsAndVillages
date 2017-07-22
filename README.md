@@ -109,7 +109,7 @@ Notes:
 
 ## Interesting links
 - [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia
-- [The Zipf Mystery](https://www.youtube.com/watch?v=fCn8zs912OE)
+- [The Zipf Mystery](https://www.youtube.com/watch?v=fCn8zs912OE) - Vsauce - YouTube
 
 ## Thanks to
 - [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - [Mike Simpson's Genealogy Site](http://freepages.genealogy.rootsweb.ancestry.com/~agene/)

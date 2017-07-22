@@ -85,8 +85,6 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ## Most frequent n-grams per size
 
-Note that spaces and dashes were removed in the names before creating n-grams.
-
 ![Commonest n-grams](images/commonest_ngrams/common_mixed.png)
 
 ![Commonest n-grams](images/commonest_ngrams/common_bigrams.png)
@@ -100,6 +98,10 @@ Note that spaces and dashes were removed in the names before creating n-grams.
 ![Commonest n-grams](images/commonest_ngrams/common_6grams.png)
 
 ![Commonest n-grams](images/commonest_ngrams/common_7grams.png)
+
+Notes:
+- Spaces and dashes were removed in the names before creating n-grams.
+- The Y axis is on different scales in each graph.
 
 ## Lengths of names
 

@@ -71,7 +71,17 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![nan](images/coords_nan.png)
 
-## Frequency analysis
+## Most common dictionary words in place names
+
+![Most common dictionary words in place names](images/common_dictionary_words.png)
+
+Note: this list was heavily curated for the following reasons:
+- The source dictionary list contains unhelpful (in this case) pieces like 'E', 'LL', 'ENL' which are mostly noise
+- Single and double letter variations (e.g. 'A', 'EN') are mostly noise
+- Some longer dictionary words like 'UGH' and 'EST' still don't really belong
+However the raw, uncurated analysis data can be found [here](output/dictionary_word_occurrences_3lettersormore.txt).
+
+## Letter frequencies
 
 ![Start and end letters](images/start_and_end_letters.png)
 
@@ -113,6 +123,7 @@ Notes:
 
 ## Thanks to
 - [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - Mike Simpson's Genealogy Site
+- [dwyl - english-words](https://github.com/dwyl/english-words) - 479k English wordlist
 - [clipboardy](https://github.com/sindresorhus/clipboardy) - copy/paste library for Node.js
 - [CSV to Markdown Table Generator](https://donatstudios.com/CsvToMarkdownTable) - Donat Studios
 - [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia

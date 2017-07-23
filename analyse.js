@@ -3,7 +3,7 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "LENGTHS", // LENGTHS, NGRAMS, COORDINATES
+	mode: "DICTIONARY", // LENGTHS, NGRAMS, COORDINATES, DICTIONARY
 	lengths: {
 		display: 15
 	},
@@ -339,7 +339,62 @@ else if(_config.mode == "COORDINATES")
 		
 		console.log("Copied to clipboard.");
 	}
-}	
+}
+else if(_config.mode == "DICTIONARY")
+{
+	let dictionary = __fs.readFileSync("words_alpha.txt", "utf8").split("\r\n");
+	let counts = [];
+	
+	for(let word in dictionary)
+	{
+		let index = -1;
+		
+		for(let i in data)
+		{
+			if(data[i].name.toLowerCase().indexOf(dictionary[word]) != -1)
+			{
+				if(index == -1)
+				{
+					index = counts.length;
+					counts.push(
+						{
+							word: dictionary[word],
+							count: 1
+						}
+					);
+				}
+				else
+				{
+					counts[index].count++;
+				}
+			}
+		}
+		
+		if(((word - 0 + 1) % 500) == 0)
+		{
+			console.log((word - 0 + 1) +" / "+ dictionary.length +" ( "+ (((word - 0 + 1) / dictionary.length) * 100).toFixed(2) +"% )");
+		}
+	}
+	
+	counts.sort(
+		function(a, b)
+		{
+			return (b.count - a.count);
+		}
+	);
+	
+	let output = "";
+	
+	for(let i in counts)
+	{
+		output += counts[i].word +"\t"+ counts[i].count +"\n";
+	}
+	
+	__fs.writeFileSync("output/dictionary_word_occurrences.txt", output, "utf8");
+}
+
+
+
 
 
 

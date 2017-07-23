@@ -71,6 +71,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![nan](images/coords_nan.png)
 
+![setter](images/coords_setter.png)
+
 ![-cott, -cot](images/cott_cot.png)
 
 ## Most common dictionary words in place names

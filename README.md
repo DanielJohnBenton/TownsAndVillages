@@ -80,6 +80,7 @@ Note: this list was heavily curated for the following reasons:
 - The source dictionary list contains unhelpful (in this case) pieces like 'E', 'LL', 'ENL' which are mostly noise
 - Single and double letter variations (e.g. 'A', 'EN') are mostly noise
 - Some longer dictionary words like 'UGH' and 'EST' still don't really belong
+
 However the raw, uncurated analysis data can be found [here](output/dictionary_word_occurrences_3lettersormore.txt).
 
 ## Letter frequencies

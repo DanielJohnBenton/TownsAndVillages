@@ -1,6 +1,16 @@
 # TownsAndVillages
 
-## Places containing n-grams
+## Contents
+- [British place name component maps]()
+- [Most common dictionary words in British place names]()
+- [Letter frequencies in British place names]()
+- [Most common British place name components per n-gram size]()
+- [Lengths of British place names]()
+- [Interesting links]()
+- [Acknowledgements]()
+- [Technologies used]()
+
+## British place name component maps
 
 The quality of these is admittedly questionable.
 
@@ -75,7 +85,7 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![-cott, -cot](images/cott_cot.png)
 
-## Most common dictionary words in place names
+## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)
 [view full size](https://raw.githubusercontent.com/DanielJohnBenton/TownsAndVillages/master/images/common_dictionary_words.png)
@@ -87,7 +97,7 @@ Note: this list was heavily curated for the following reasons:
 
 However the raw, uncurated analysis data can be found [here](output/dictionary_word_occurrences_3lettersormore.txt).
 
-## Letter frequencies
+## Letter frequencies in British place names
 
 ![Start and end letters](images/start_and_end_letters.png)
 
@@ -99,7 +109,7 @@ However the raw, uncurated analysis data can be found [here](output/dictionary_w
 
 ![Letter frequencies vs general English](images/letter_frequencies_differences.png)
 
-## Most frequent n-grams per size
+## Most common British place name components per n-gram size
 
 ![Commonest n-grams](images/commonest_ngrams/common_mixed.png)
 
@@ -119,7 +129,7 @@ Notes:
 - Spaces and dashes were removed in the names before creating n-grams.
 - The Y axis is on different scales in each graph.
 
-## Lengths of names
+## Lengths of British place names
 
 ![lengths of names](images/lengths_distribution.png)
 

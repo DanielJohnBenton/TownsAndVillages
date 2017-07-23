@@ -1,14 +1,14 @@
 # British place names
 
 ## Contents
-- [British place name component maps]()
-- [Most common dictionary words in British place names]()
-- [Letter frequencies in British place names]()
-- [Most common British place name components per n-gram size]()
-- [Lengths of British place names]()
-- [Interesting links]()
-- [Acknowledgements]()
-- [Technologies used]()
+- [British place name component maps](https://github.com/DanielJohnBenton/TownsAndVillages#british-place-name-component-maps)
+- [Most common dictionary words in British place names](https://github.com/DanielJohnBenton/TownsAndVillages#most-common-dictionary-words-in-british-place-names)
+- [Letter frequencies in British place names](https://github.com/DanielJohnBenton/TownsAndVillages#letter-frequencies-in-british-place-names)
+- [Most common British place name components per n-gram size](https://github.com/DanielJohnBenton/TownsAndVillages#most-common-british-place-name-components-per-n-gram-size)
+- [Lengths of British place names](https://github.com/DanielJohnBenton/TownsAndVillages#lengths-of-british-place-names)
+- [Interesting links](https://github.com/DanielJohnBenton/TownsAndVillages#interesting-links)
+- [Acknowledgements](https://github.com/DanielJohnBenton/TownsAndVillages#thanks-to)
+- [Technologies used](https://github.com/DanielJohnBenton/TownsAndVillages#technologies-used)
 
 ## British place name component maps
 

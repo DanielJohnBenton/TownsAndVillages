@@ -74,6 +74,7 @@ Interesting that "worth" is well spread over England but does not venture into S
 ## Most common dictionary words in place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)
+[view full size](https://raw.githubusercontent.com/DanielJohnBenton/TownsAndVillages/master/images/common_dictionary_words.png)
 
 Note: this list was heavily curated for the following reasons:
 - The source dictionary list contains unhelpful (in this case) pieces like 'E', 'LL', 'ENL' which are mostly noise

@@ -39,6 +39,7 @@ with open('data.json') as data_file:
     data = json.load(data_file)
 
 fig = pyplot.figure(figsize=(5,8))
+
 pyplot.axis("off")
 
 background = pandas.read_csv("background/_background.csv")
@@ -54,9 +55,17 @@ for argument in arguments:
 	coords[argument]["east"] = []
 
 if len(arguments) > 1:
-	colours = ["y", "r", "b", "m", "k"]
+	colours = ["b", "r", "y", "m", "y"]
+	edges   = ["y", "w", "k", "w", "k"]
+	markers = ["^", "X", "D", "o", "*"]
+	sizes   = [20,   20,  10,  20,  20]
+	lines   = [0.3,  0.3, 0.3, 0.3, 0.3]
 else:
 	colours = ["k"]
+	edges = ["w"]
+	markers = ["o"]
+	sizes = [10]
+	lines = [0.3]
 
 plots = []
 
@@ -81,14 +90,16 @@ for iArg in range(len(arguments)):
 			csvData +="\n"+ str(place["north"]) +","+ str(place["east"])
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
-	plots.append(pyplot.scatter(csv["east"], csv["north"], color=colours[iArg], s=8))
+	plots.append(pyplot.scatter(csv["east"], csv["north"], facecolors=colours[iArg], edgecolors=edges[iArg], linewidth=lines[iArg], s=sizes[iArg], marker=markers[iArg]))
 	
 	if csvData != "north,east":
 		anythingFound = True
 
 font = FontProperties()
 font.set_size("small")
-legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names "+ position.lower() +":", prop=font, bbox_to_anchor=(0.6, 1.05), ncol=3)
+legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names "+ position.lower() +":", prop=font, bbox_to_anchor=(0.6, 1), ncol=3)
+
+fig.tight_layout()
 
 if anythingFound:
 	pyplot.show()

@@ -74,9 +74,8 @@ for iArg in range(len(arguments)):
 		if len(argumentRef) > len(name):
 			continue
 		
-		if position == "CONTAINING" and argumentRef in name:
+		if (position == "CONTAINING" and argumentRef in name) or (position == "STARTING" and name.startswith(argumentRef)) or (position == "ENDING" and name.endswith(argumentRef)):
 			csvData +="\n"+ str(place["north"]) +","+ str(place["east"])
-	
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
 	plots.append(pyplot.scatter(csv["east"], csv["north"], color=colours[iArg], s=8))

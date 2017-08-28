@@ -54,18 +54,18 @@ for argument in arguments:
 	coords[argument]["north"] = []
 	coords[argument]["east"] = []
 
-if len(arguments) > 1:
-	colours = ["b", "y", "r", "m", "y"]
-	edges   = ["y", "k", "k", "w", "k"]
-	markers = ["^", "X", "D", "o", "*"]
-	sizes   = [20,   20,  10,  20,  20]
-	lines   = [0.3,  0.3, 0.3, 0.3, 0.3]
-else:
-	colours = ["k"]
-	edges = ["w"]
-	markers = ["o"]
-	sizes = [10]
-	lines = [0.3]
+# if len(arguments) > 1:
+colours = ["b", "y", "r", "m", "y"]
+edges   = ["y", "k", "k", "w", "k"]
+markers = ["^", "X", "D", "o", "*"]
+sizes   = [20,   20,  10,  20,  20]
+lines   = [0.3,  0.3, 0.3, 0.3, 0.3]
+# else:
+	# colours = ["k"]
+	# edges = ["w"]
+	# markers = ["o"]
+	# sizes = [10]
+	# lines = [0.3]
 
 plots = []
 

@@ -53,7 +53,10 @@ for argument in arguments:
 	coords[argument]["north"] = []
 	coords[argument]["east"] = []
 
-colours = ["b", "g", "r", "m", "k"]
+if len(arguments) > 1:
+	colours = ["y", "r", "b", "m", "k"]
+else:
+	colours = ["k"]
 
 plots = []
 

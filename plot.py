@@ -55,8 +55,8 @@ for argument in arguments:
 	coords[argument]["east"] = []
 
 if len(arguments) > 1:
-	colours = ["b", "r", "y", "m", "y"]
-	edges   = ["y", "w", "k", "w", "k"]
+	colours = ["b", "y", "r", "m", "y"]
+	edges   = ["y", "k", "k", "w", "k"]
 	markers = ["^", "X", "D", "o", "*"]
 	sizes   = [20,   20,  10,  20,  20]
 	lines   = [0.3,  0.3, 0.3, 0.3, 0.3]

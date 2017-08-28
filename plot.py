@@ -85,7 +85,7 @@ for iArg in range(len(arguments)):
 
 font = FontProperties()
 font.set_size("small")
-legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names containing:", prop=font, bbox_to_anchor=(0.6, 1.05), ncol=3)
+legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names "+ position.lower() +":", prop=font, bbox_to_anchor=(0.6, 1.05), ncol=3)
 
 if anythingFound:
 	pyplot.show()

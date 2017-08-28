@@ -51,7 +51,7 @@ I suspect this to be [another Danelaw term](https://en.wiktionary.org/wiki/thorp
 
 ![thames](images/coords_thames.png)
 
-![worth](images/coords_worth.png)
+![-worth, -worthy](images/coords_worth_worthy.png)
 
 Interesting that "worth" is well spread over England but does not venture into Scotland or Wales - but makes more sense when you find that [its origin is Old English](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland).
 

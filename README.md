@@ -83,6 +83,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![-cott, -cot](images/cott_cot.png)
 
+![rivers](images/coords_rivers.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

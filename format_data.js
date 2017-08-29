@@ -61,10 +61,18 @@ for(let i = 0; i < nTowns; i++)
 	
 	for(let iDetails = 0, lDetails = details.length; iDetails < lDetails && !/[0-9]/.test(details.charAt(iDetails)); iDetails++)
 	{
+		if(details.charAt(iDetails) == "-" && iDetails != (details.length - 1))
+		{
+			if(/[0-9]/.test(details.charAt(iDetails + 1)))
+			{
+				break;
+			}
+		}
+		
 		county += details.charAt(iDetails);
 	}
 	
-	details = details.substr(county.length + 1, details.length);
+	details = details.substr(county.length, details.length);
 	
 	county = county.trim();
 	

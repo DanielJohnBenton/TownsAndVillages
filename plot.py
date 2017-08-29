@@ -74,9 +74,12 @@ if len(arguments) > len(colours):
 	quit()
 
 anythingFound = False
+counts = {}
 
 for iArg in range(len(arguments)):
 	argumentRef = arguments[iArg].lower()
+	
+	counts[argumentRef] = 0
 	
 	csvData = "north,east"
 	
@@ -88,6 +91,7 @@ for iArg in range(len(arguments)):
 		
 		if (position == "CONTAINING" and argumentRef in name) or (position == "STARTING" and name.startswith(argumentRef)) or (position == "ENDING" and name.endswith(argumentRef)):
 			csvData +="\n"+ str(place["north"]) +","+ str(place["east"])
+			counts[argumentRef] += 1
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
 	plots.append(pyplot.scatter(csv["east"], csv["north"], facecolors=colours[iArg], edgecolors=edges[iArg], linewidth=lines[iArg], s=sizes[iArg], marker=markers[iArg]))
@@ -101,7 +105,8 @@ legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names "
 
 fig.tight_layout()
 
+for iArg in range(len(arguments)):
+	print("["+ markers[iArg] +"] "+ arguments[iArg] +"\n\t=> "+ str(counts[arguments[iArg].lower()]))
+
 if anythingFound:
 	pyplot.show()
-else:
-	print("Nothing found for that")

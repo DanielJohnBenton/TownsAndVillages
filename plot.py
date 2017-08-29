@@ -76,6 +76,18 @@ if len(arguments) > len(colours):
 anythingFound = False
 counts = {}
 
+def matches(query, name, position):
+	pieces = query.split("!")
+	ngram = pieces[0]
+	if (position == "CONTAINING" and ngram in name) or (position == "STARTING" and name.startswith(ngram)) or (position == "ENDING" and name.endswith(ngram)):
+		if(len(pieces) > 1):
+			for ignore in pieces[1:]:
+				if matches(ignore, name, position):
+					return False
+		return True
+	else:
+		return False
+
 for iArg in range(len(arguments)):
 	argumentRef = arguments[iArg].lower()
 	
@@ -89,7 +101,7 @@ for iArg in range(len(arguments)):
 		if len(argumentRef) > len(name):
 			continue
 		
-		if (position == "CONTAINING" and argumentRef in name) or (position == "STARTING" and name.startswith(argumentRef)) or (position == "ENDING" and name.endswith(argumentRef)):
+		if matches(argumentRef, name, position):
 			csvData +="\n"+ str(place["north"]) +","+ str(place["east"])
 			counts[argumentRef] += 1
 	
@@ -99,9 +111,14 @@ for iArg in range(len(arguments)):
 	if csvData != "north,east":
 		anythingFound = True
 
+
+legendArguments = []
+for argument in arguments:
+	legendArguments.append(argument.split("!")[0])
+
 font = FontProperties()
 font.set_size("small")
-legend = pyplot.legend(plots, arguments, loc="upper right", title="Place names "+ position.lower() +":", prop=font, bbox_to_anchor=(0.6, 1), ncol=3)
+legend = pyplot.legend(plots, legendArguments, loc="upper right", title="Place names "+ position.lower() +":", prop=font, bbox_to_anchor=(0.6, 1), ncol=3)
 
 fig.tight_layout()
 

@@ -3,7 +3,7 @@
 let __fs = require("fs");
 
 let _config = {
-	mode: "DICTIONARY", // LENGTHS, NGRAMS, COORDINATES, DICTIONARY
+	mode: "LENGTHS", // LENGTHS, NGRAMS, DICTIONARY
 	lengths: {
 		display: 15
 	},
@@ -12,11 +12,6 @@ let _config = {
 		output: "", // [blank], LETTERS-ALPHABETICALLY, LETTERS-COUNT
 		minimum: 1,
 		maximum: 1
-	},
-	coordinates: {
-		ngram: "regis",
-		position: "ENDS", // ENDS, ENTIRE
-		copy: true
 	}
 };
 
@@ -281,64 +276,7 @@ else if(_config.mode == "LETTERFREQUENCY")
 }
 else if(_config.mode == "COORDINATES")
 {
-	let filterEnds = function(item)
-	{
-		let letters = LettersOnly(item.name).toLowerCase();
-		
-		if(letters.length < _config.coordinates.ngram.length)
-		{
-			return false;
-		}
-		
-		return (letters.slice(letters.length - _config.coordinates.ngram.length, letters.length) == _config.coordinates.ngram);
-	}
-	
-	let filterEntire = function(item)
-	{
-		return (LettersOnly(item.name).toLowerCase().indexOf(_config.coordinates.ngram.toLowerCase()) != -1);
-	}
-	
-	let positives = data.filter(
-		((_config.coordinates.position == "ENDS") ? filterEnds : filterEntire)
-	);
-	
-	let output = ""
-	
-	for(let town in positives)
-	{
-		output += positives[town].east;
-		
-		if(town < (positives.length - 1))
-		{
-			output +="\t";
-		}
-	}
-	
-	output +="\n";
-	
-	for(let town in positives)
-	{
-		output += positives[town].north;
-		
-		if(town < (positives.length - 1))
-		{
-			output +="\t";
-		}
-	}
-	
-	if(positives.length > 0)
-	{
-		__fs.writeFileSync("output/coordinates_"+ _config.coordinates.ngram.toLowerCase() +".txt", output, "utf8");
-	}
-	
-	console.log(positives.length +" items saved for '"+ _config.coordinates.ngram.toLowerCase() +"' position: "+ _config.coordinates.position +".");
-	
-	if(_config.coordinates.copy && positives.length > 0)
-	{
-		require("clipboardy").writeSync(output);
-		
-		console.log("Copied to clipboard.");
-	}
+	console.log("This feature has been superseded. Please use 'plot.py'.");
 }
 else if(_config.mode == "DICTIONARY")
 {

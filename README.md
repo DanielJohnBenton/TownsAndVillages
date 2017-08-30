@@ -87,6 +87,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![bister, setter](images/coords_bister_setter.png)
 
+![down, downs](images/coords_down_downs.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

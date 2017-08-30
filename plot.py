@@ -98,7 +98,7 @@ for iArg in range(len(arguments)):
 	for place in data:
 		name = place["name"].lower()
 		
-		if len(argumentRef) > len(name):
+		if len(argumentRef.split("!")[0]) > len(name):
 			continue
 		
 		if matches(argumentRef, name, position):

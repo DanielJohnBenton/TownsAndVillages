@@ -1,5 +1,3 @@
-# Implementation of analyse.js "COORDINATES" feature with graphing and system args
-
 import sys
 from io import StringIO
 import json
@@ -55,10 +53,10 @@ for argument in arguments:
 	coords[argument]["east"] = []
 
 # if len(arguments) > 1:
-colours = ["b", "y", "r", "m", "y"]
-edges   = ["y", "k", "k", "w", "k"]
+colours = ["b", "y", "r", "w", "k"]
+edges   = ["y", "k", "k", "k", "k"]
 markers = ["^", "X", "D", "o", "*"]
-sizes   = [20,   20,  10,  20,  20]
+sizes   = [20,   20,  10,  20,  30]
 lines   = [0.3,  0.3, 0.3, 0.3, 0.3]
 # else:
 	# colours = ["k"]

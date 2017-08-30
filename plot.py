@@ -58,6 +58,7 @@ edges   = ["y", "k", "k", "k", "k"]
 markers = ["^", "X", "D", "o", "*"]
 sizes   = [20,   20,  10,  20,  30]
 lines   = [0.3,  0.3, 0.3, 0.3, 0.3]
+order = [0, 1, 4, 3, 2]
 # else:
 	# colours = ["k"]
 	# edges = ["w"]
@@ -104,7 +105,7 @@ for iArg in range(len(arguments)):
 			counts[argumentRef] += 1
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
-	plots.append(pyplot.scatter(csv["east"], csv["north"], facecolors=colours[iArg], edgecolors=edges[iArg], linewidth=lines[iArg], s=sizes[iArg], marker=markers[iArg]))
+	plots.append(pyplot.scatter(csv["east"], csv["north"], facecolors=colours[order[iArg]], edgecolors=edges[order[iArg]], linewidth=lines[order[iArg]], s=sizes[order[iArg]], marker=markers[order[iArg]]))
 	
 	if csvData != "north,east":
 		anythingFound = True
@@ -121,7 +122,7 @@ legend = pyplot.legend(plots, legendArguments, loc="upper right", title="Place n
 fig.tight_layout()
 
 for iArg in range(len(arguments)):
-	print("["+ markers[iArg] +"] "+ arguments[iArg] +"\n\t=> "+ str(counts[arguments[iArg].lower()]))
+	print("["+ markers[order[iArg]] +"] "+ arguments[iArg] +"\n\t=> "+ str(counts[arguments[iArg].lower()]))
 
 if anythingFound:
 	pyplot.show()

@@ -89,6 +89,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![down, downs](images/coords_down_downs.png)
 
+![ley, ly, leigh, lee, lie](images/coords_ley_etc.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

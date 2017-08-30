@@ -325,14 +325,3 @@ else if(_config.mode == "DICTIONARY")
 	
 	__fs.writeFileSync("output/dictionary_word_occurrences.txt", output, "utf8");
 }
-
-
-
-
-
-
-
-
-
-
-

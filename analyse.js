@@ -20,11 +20,6 @@ function Defined(type)
 	return (type != "undefined");
 }
 
-function Undefined(type)
-{
-	return !Defined(type);
-}
-
 function LettersOnly(text)
 {
 	let letters = "";

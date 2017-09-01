@@ -68,8 +68,8 @@ order = [0, 1, 4, 3, 2]
 
 plots = []
 
-if len(arguments) > len(colours):
-	print("Currently only "+ str(len(colours)) +" ngrams are supported per map.")
+if len(arguments) > len(order):
+	print("Currently only "+ str(len(order)) +" ngrams are supported per map.")
 	quit()
 
 anythingFound = False

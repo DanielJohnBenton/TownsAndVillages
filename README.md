@@ -91,6 +91,10 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![ley, ly, leigh, lee, lie](images/coords_ley_etc.png)
 
+![wald, wold, weald](images/coords_wald_wold_weald.png)
+
+Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#English).
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

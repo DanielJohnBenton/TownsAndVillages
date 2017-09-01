@@ -95,6 +95,8 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#English).
 
+![toft](images/coords_toft.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

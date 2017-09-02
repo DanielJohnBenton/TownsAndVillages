@@ -146,9 +146,12 @@ Notes:
 ![lengths of names](images/lengths_distribution.png)
 
 ## Interesting links
+- [Toponymy in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/Toponymy_in_the_United_Kingdom_and_Ireland) - Wikipedia
 - [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia
 - [The Zipf Mystery](https://www.youtube.com/watch?v=fCn8zs912OE) - Vsauce - YouTube
+- [Old Norse and Norn names in Shetland](http://www.edinburghgeolsoc.org/edingeologist/z_39_08.html) - Edinburgh Geological Society
 - [Glossary of Scandinavian origins of place names in Britain](https://www.ordnancesurvey.co.uk/resources/historical-map-resources/scandinavian-glossary.html) - Ordnance Survey
+- [Talk of the town: The etymology of UK places](http://www.independent.co.uk/news/uk/this-britain/talk-of-the-town-the-etymology-of-uk-places-2277630.html) - The Independent
 
 ## Thanks to
 - [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - Mike Simpson's Genealogy Site

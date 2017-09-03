@@ -111,10 +111,11 @@ for iNgram in range(len(ngrams)):
 			break
 
 ngrams = [ngram for ngram in ngrams if ngram["interesting"]]
-
 ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
 
-print("Generating "+ str(len(ngrams)) +" graphs")
+nNgrams = len(ngrams)
+
+print("Generating "+ str(nNgrams) +" graphs")
 
 def progressBar(completed, all, n):
 	bars = math.floor((n / all) * completed)
@@ -125,8 +126,6 @@ def progressBar(completed, all, n):
 		out +="-"
 	out += "] "+ str(completed)
 	sys.stdout.write(out)
-
-nNgrams = len(ngrams)
 
 for iNgram in range(nNgrams):
 	ngram = ngrams[iNgram]

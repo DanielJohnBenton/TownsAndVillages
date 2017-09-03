@@ -33,7 +33,7 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 	for place in data:
 		name = place["name"]
 		
-		if len(name) <= size:
+		if len(name) < size:
 			continue
 		
 		square = place["code"][:2]

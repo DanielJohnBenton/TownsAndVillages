@@ -111,9 +111,33 @@ for iNgram in range(len(ngrams)):
 			break
 
 ngrams = [ngram for ngram in ngrams if ngram["interesting"]]
+nNgrams = len(ngrams)
+
+print("Sorting data")
 ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
 
-nNgrams = len(ngrams)
+lookup_index = {}
+lookup_ngram = {}
+
+for iNgram in range(nNgrams):
+	lookup_index[ngrams[iNgram]["position"] +"_"+ ngrams[iNgram]["ngram"].lower()] = iNgram
+
+positions = ["starting", "ending", "containing"]
+newNgrams = []
+
+for iNgram in range(nNgrams):
+	ngram = ngrams[iNgram]
+	if ngram["ngram"].lower() not in lookup_ngram:
+		newNgrams.append(ngram)
+		otherPositions = [position for position in positions if position != ngram["position"]]
+		for otherPosition in otherPositions:
+			id = otherPosition +"_"+ ngram["ngram"].lower()
+			if id in lookup_index:
+				newNgrams.append(ngrams[lookup_index[id]])
+		lookup_ngram[ngram["ngram"].lower()] = True
+
+ngrams = newNgrams
+del newNgrams
 
 print("Generating "+ str(nNgrams) +" graphs")
 
@@ -147,5 +171,6 @@ for iNgram in range(nNgrams):
 	pyplot.close(fig)
 	
 	progressBar(iNgram + 1, nNgrams, 100)
+
 print("")
 print("Done")

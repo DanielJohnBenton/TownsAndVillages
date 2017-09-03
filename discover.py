@@ -1,4 +1,4 @@
-# this script discovers interesting clusters
+### this script discovers interesting clusters
 
 import sys
 import math
@@ -7,23 +7,35 @@ import json
 import pandas
 import matplotlib.pyplot as pyplot
 
-# heuristics - preference given to over-selecting rather than under-selecting
+## ===
+## heuristics - preference given to over-selecting rather than under-selecting
+# ngrams below and above these numbers in length of characters will not be considered
 NGRAM_MIN = 1
 NGRAM_MAX = 20
+# if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
 MAX_SQUARES = 7
 MIN_POSITIONS = 20
 INTERESTING_PERCENTAGE = 70
+## ===
 
+# where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
 
+## ===
+## load data from JSON and CSV
 print("Loading data")
 
+# here are the place names, co-ordinates, and Ordnance Survey grid codes
 with open("data.json") as data_file:
 	data = json.load(data_file)
 
+# place co-ordinates pre-formatted to be scatter plotted as a grey background/outline of Britain
 backgroundData = pandas.read_csv("background/_background.csv")
 backgroundColour = "#e2e2e2"
+## ===
 
+## ===
+## coordinates and square codes are collected per ngram/position combo
 print("Preliminary analysis")
 
 ngrams = []
@@ -81,7 +93,10 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 					"coords": [{ "north": place["north"], "east": place["east"] }]
 				})
 
+## ===
 
+## ===
+## select interesting data according to configured heuristics
 print("Selecting interesting data")
 ngrams = [ngram for ngram in ngrams if ngram["count"] >= MIN_POSITIONS]
 
@@ -112,19 +127,25 @@ for iNgram in range(len(ngrams)):
 
 ngrams = [ngram for ngram in ngrams if ngram["interesting"]]
 nNgrams = len(ngrams)
+## ===
 
+## ===
+## sort data for display
 print("Sorting data")
+
+# sort for some sort of "interestingness", although this is difficult
 ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
 
+# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
+# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands
 lookup_index = {}
-lookup_ngram = {}
-
 for iNgram in range(nNgrams):
 	lookup_index[ngrams[iNgram]["position"] +"_"+ ngrams[iNgram]["ngram"].lower()] = iNgram
 
 positions = ["starting", "ending", "containing"]
 newNgrams = []
 
+lookup_ngram = {}
 for iNgram in range(nNgrams):
 	ngram = ngrams[iNgram]
 	if ngram["ngram"].lower() not in lookup_ngram:
@@ -138,7 +159,10 @@ for iNgram in range(nNgrams):
 
 ngrams = newNgrams
 del newNgrams
+## ===
 
+## ===
+## Generate graphs as PNGs in the configured folder
 print("Generating "+ str(nNgrams) +" graphs")
 
 def progressBar(completed, all, n):
@@ -171,6 +195,7 @@ for iNgram in range(nNgrams):
 	pyplot.close(fig)
 	
 	progressBar(iNgram + 1, nNgrams, 100)
+## ===
 
 print("")
 print("Done")

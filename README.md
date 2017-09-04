@@ -147,6 +147,8 @@ Notes:
 
 ## Interesting links
 - [Toponymy in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/Toponymy_in_the_United_Kingdom_and_Ireland) - Wikipedia
+- [Toponymy of England - Languages](https://en.wikipedia.org/wiki/Toponymy_of_England#Languages) - Wikipedia
+- [Mapping Vikings through British Isles Placenames](https://jalapic.github.io/vikings) - James Curley
 - [List of generic forms in place names in the United Kingdom and Ireland](https://en.wikipedia.org/wiki/List_of_generic_forms_in_place_names_in_the_United_Kingdom_and_Ireland) - Wikipedia
 - [The Zipf Mystery](https://www.youtube.com/watch?v=fCn8zs912OE) - Vsauce - YouTube
 - [Old Norse and Norn names in Shetland](http://www.edinburghgeolsoc.org/edingeologist/z_39_08.html) - Edinburgh Geological Society

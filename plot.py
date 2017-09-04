@@ -8,7 +8,7 @@ from matplotlib.font_manager import FontProperties
 foundPosition = False
 hasThingsFollowingPosition = False
 position = ""
-firstNgramIndex = 0
+firstArgumentIndex = 0
 
 for iArg in range(len(sys.argv)):
 	argument = sys.argv[iArg].upper()
@@ -16,11 +16,11 @@ for iArg in range(len(sys.argv)):
 		position = argument
 		foundPosition = True
 	elif foundPosition:
-		firstNgramIndex = iArg
+		firstArgumentIndex = iArg
 		hasThingsFollowingPosition = True
 		break
 
-arguments = sys.argv[firstNgramIndex:]
+arguments = sys.argv[firstArgumentIndex:]
 
 example = "py plot.py starting inver aber"
 
@@ -69,7 +69,7 @@ order = [0, 1, 4, 3, 2]
 plots = []
 
 if len(arguments) > len(order):
-	print("Currently only "+ str(len(order)) +" ngrams are supported per map.")
+	print("Currently only "+ str(len(order)) +" arguments are supported per map.")
 	quit()
 
 anythingFound = False
@@ -77,8 +77,8 @@ counts = {}
 
 def matches(query, name, position):
 	pieces = query.split("!")
-	ngram = pieces[0]
-	if (position == "CONTAINING" and ngram in name) or (position == "STARTING" and name.startswith(ngram)) or (position == "ENDING" and name.endswith(ngram)):
+	text = pieces[0]
+	if (position == "CONTAINING" and text in name) or (position == "STARTING" and name.startswith(text)) or (position == "ENDING" and name.endswith(text)):
 		if(len(pieces) > 1):
 			for ignore in pieces[1:]:
 				if matches(ignore, name, position):

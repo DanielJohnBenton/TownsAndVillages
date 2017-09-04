@@ -154,6 +154,7 @@ Notes:
 - [Old Norse and Norn names in Shetland](http://www.edinburghgeolsoc.org/edingeologist/z_39_08.html) - Edinburgh Geological Society
 - [Glossary of Scandinavian origins of place names in Britain](https://www.ordnancesurvey.co.uk/resources/historical-map-resources/scandinavian-glossary.html) - Ordnance Survey
 - [Talk of the town: The etymology of UK places](http://www.independent.co.uk/news/uk/this-britain/talk-of-the-town-the-etymology-of-uk-places-2277630.html) - The Independent
+- [List of United Kingdom county name etymologies](https://en.wikipedia.org/wiki/List_of_United_Kingdom_county_name_etymologies) - Wikipedia
 
 ## Thanks to
 - [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - Mike Simpson's Genealogy Site

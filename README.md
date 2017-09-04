@@ -97,6 +97,8 @@ Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#En
 
 ![toft](images/coords_toft.png)
 
+![garth](images/coords_garth.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

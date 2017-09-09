@@ -33,7 +33,7 @@ elif not hasThingsFollowingPosition:
 	print("Example: "+ example)
 	quit()
 
-with open('data.json') as data_file:    
+with open("data/geonames/GB_IM_combined.json") as data_file:    
     data = json.load(data_file)
 
 fig = pyplot.figure(figsize=(5,8))
@@ -101,7 +101,7 @@ for iArg in range(len(arguments)):
 			continue
 		
 		if matches(argumentRef, name, position):
-			csvData +="\n"+ str(place["north"]) +","+ str(place["east"])
+			csvData +="\n"+ str(place["latitude"]) +","+ str(place["longitude"])
 			counts[argumentRef] += 1
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")

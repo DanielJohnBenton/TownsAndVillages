@@ -92,7 +92,7 @@ for iArg in range(len(arguments)):
 	
 	counts[argumentRef] = 0
 	
-	csvData = "north,east"
+	csvData = "east,north"
 	
 	for place in data:
 		name = place["name"].lower()
@@ -105,9 +105,9 @@ for iArg in range(len(arguments)):
 			counts[argumentRef] += 1
 	
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
-	plots.append(pyplot.scatter(csv["east"], csv["north"], facecolors=colours[order[iArg]], edgecolors=edges[order[iArg]], linewidth=lines[order[iArg]], s=sizes[order[iArg]], marker=markers[order[iArg]]))
+	plots.append(pyplot.scatter(csv["north"], csv["east"], facecolors=colours[order[iArg]], edgecolors=edges[order[iArg]], linewidth=lines[order[iArg]], s=sizes[order[iArg]], marker=markers[order[iArg]]))
 	
-	if csvData != "north,east":
+	if csvData != "east,north":
 		anythingFound = True
 
 

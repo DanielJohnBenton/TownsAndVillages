@@ -13,20 +13,24 @@ import matplotlib.pyplot as pyplot
 NGRAM_MIN = 1
 NGRAM_MAX = 20
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 7
-MIN_POSITIONS = 20
+MAX_SQUARES = 8
+MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 70
 ## ===
 
+DATA_PATH = "data/geonames/GB_IM_combined.json"
+
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
+
+SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 
 ## ===
 ## load data from JSON and CSV
 print("Loading data")
 
 # here are the place names, co-ordinates, and Ordnance Survey grid codes
-with open("data.json") as data_file:
+with open(DATA_PATH) as data_file:
 	data = json.load(data_file)
 
 # place co-ordinates pre-formatted to be scatter plotted as a grey background/outline of Britain
@@ -48,7 +52,7 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 		if len(name) < size:
 			continue
 		
-		square = place["code"][:2]
+		square = place["square"]
 		
 		keys = []
 		key_ngrams = []
@@ -78,7 +82,7 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 			if key in lookup:
 				ngrams[lookup[key]]["count"] += 1
 				ngrams[lookup[key]]["squares"].append(square)
-				ngrams[lookup[key]]["coords"].append({ "north": place["north"], "east": place["east"] })
+				ngrams[lookup[key]]["coords"].append({ "north": place["latitude"], "east": place["longitude"] })
 			else:
 				lookup[key] = len(ngrams)
 				position = key.split("_")[0]
@@ -90,7 +94,7 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 					"squares": [square],
 					"squareCounts": [],
 					"interestingSquareCount": 0,
-					"coords": [{ "north": place["north"], "east": place["east"] }]
+					"coords": [{ "north": place["latitude"], "east": place["longitude"] }]
 				})
 
 ## ===
@@ -133,32 +137,35 @@ nNgrams = len(ngrams)
 ## sort data for display
 print("Sorting data")
 
-# sort for some sort of "interestingness", although this is difficult
-ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
+if SORT_MODE == "INTERESTING":
+	# sort for some sort of "interestingness", although this is difficult
+	ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
 
-# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
-# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands
-lookup_index = {}
-for iNgram in range(nNgrams):
-	lookup_index[ngrams[iNgram]["position"] +"_"+ ngrams[iNgram]["ngram"].lower()] = iNgram
+	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
+	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands
+	lookup_index = {}
+	for iNgram in range(nNgrams):
+		lookup_index[ngrams[iNgram]["position"] +"_"+ ngrams[iNgram]["ngram"].lower()] = iNgram
 
-positions = ["starting", "ending", "containing"]
-newNgrams = []
+	positions = ["starting", "ending", "containing"]
+	newNgrams = []
 
-lookup_ngram = {}
-for iNgram in range(nNgrams):
-	ngram = ngrams[iNgram]
-	if ngram["ngram"].lower() not in lookup_ngram:
-		newNgrams.append(ngram)
-		otherPositions = [position for position in positions if position != ngram["position"]]
-		for otherPosition in otherPositions:
-			id = otherPosition +"_"+ ngram["ngram"].lower()
-			if id in lookup_index:
-				newNgrams.append(ngrams[lookup_index[id]])
-		lookup_ngram[ngram["ngram"].lower()] = True
+	lookup_ngram = {}
+	for iNgram in range(nNgrams):
+		ngram = ngrams[iNgram]
+		if ngram["ngram"].lower() not in lookup_ngram:
+			newNgrams.append(ngram)
+			otherPositions = [position for position in positions if position != ngram["position"]]
+			for otherPosition in otherPositions:
+				id = otherPosition +"_"+ ngram["ngram"].lower()
+				if id in lookup_index:
+					newNgrams.append(ngrams[lookup_index[id]])
+			lookup_ngram[ngram["ngram"].lower()] = True
 
-ngrams = newNgrams
-del newNgrams
+	ngrams = newNgrams
+else:
+	# sort by name alphabetically
+	ngrams.sort(key=lambda x: (-len(x["ngram"]), x["ngram"].lower()))
 ## ===
 
 ## ===

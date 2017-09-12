@@ -13,17 +13,17 @@ import matplotlib.pyplot as pyplot
 NGRAM_MIN = 1
 NGRAM_MAX = 20
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 8
+MAX_SQUARES = 6
 MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 70
+SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 ## ===
 
 DATA_PATH = "data/geonames/NO.json"
-
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-
-SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
+BACKGROUND_PATH = "background/NO.csv"
+FIG_SIZE = (7,8)
 
 ## ===
 ## load data from JSON and CSV
@@ -34,7 +34,7 @@ with open(DATA_PATH, encoding="utf8") as data_file:
 	data = json.load(data_file)
 
 # place co-ordinates pre-formatted to be scatter plotted as a grey background/outline of Britain
-backgroundData = pandas.read_csv("background/NO.csv")
+backgroundData = pandas.read_csv(BACKGROUND_PATH)
 backgroundColour = "#e2e2e2"
 ## ===
 
@@ -185,7 +185,7 @@ def progressBar(completed, all, n):
 for iNgram in range(nNgrams):
 	ngram = ngrams[iNgram]
 	
-	fig = pyplot.figure(figsize=(5,8))
+	fig = pyplot.figure(figsize=FIG_SIZE)
 	pyplot.axis("off")
 	fig.suptitle("Please names "+ ngram["position"] +" ' "+ ngram["ngram"] +" '")
 	
@@ -194,8 +194,8 @@ for iNgram in range(nNgrams):
 		csvData +="\n"+ str(coord["north"]) +","+ str(coord["east"])
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
 	
-	pyplot.scatter(backgroundData["east"], backgroundData["north"], color=backgroundColour, s=8)
-	pyplot.scatter(csv["east"], csv["north"], facecolors="b", edgecolors="y", linewidth=0.3, s=20, marker="^")
+	pyplot.scatter(backgroundData["east"], backgroundData["north"], color=backgroundColour, s=8) # background data is wrong way around?
+	pyplot.scatter(csv["north"], csv["east"], facecolors="b", edgecolors="y", linewidth=0.3, s=20, marker="^")
 	fig.tight_layout()
 	
 	pyplot.savefig(GRAPH_PATH + str(iNgram + 1) +".png")

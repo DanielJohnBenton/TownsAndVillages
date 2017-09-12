@@ -33,14 +33,14 @@ elif not hasThingsFollowingPosition:
 	print("Example: "+ example)
 	quit()
 
-with open("data/geonames/GB_IM_combined.json") as data_file:    
+with open("data/geonames/GB_IM_combined.json", encoding="utf8") as data_file:    
     data = json.load(data_file)
 
 fig = pyplot.figure(figsize=(5,8))
 
 pyplot.axis("off")
 
-background = pandas.read_csv("background/_background.csv")
+background = pandas.read_csv("background/background_uk.csv")
 backgroundColour = "#e2e2e2"
 pyplot.scatter(background["east"], background["north"], color=backgroundColour, s=8)
 

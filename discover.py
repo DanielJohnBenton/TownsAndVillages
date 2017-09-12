@@ -18,7 +18,7 @@ MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 70
 ## ===
 
-DATA_PATH = "data/geonames/GB_IM_combined.json"
+DATA_PATH = "data/geonames/NO.json"
 
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
@@ -30,11 +30,11 @@ SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 print("Loading data")
 
 # here are the place names, co-ordinates, and Ordnance Survey grid codes
-with open(DATA_PATH) as data_file:
+with open(DATA_PATH, encoding="utf8") as data_file:
 	data = json.load(data_file)
 
 # place co-ordinates pre-formatted to be scatter plotted as a grey background/outline of Britain
-backgroundData = pandas.read_csv("background/_background.csv")
+backgroundData = pandas.read_csv("background/NO.csv")
 backgroundColour = "#e2e2e2"
 ## ===
 

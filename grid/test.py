@@ -3,18 +3,19 @@ import json
 import pandas
 import matplotlib.pyplot as pyplot
 
-DATA_FILE = "../data/geonames/GB_IM_combined.json"
-GRID_FILE = "GB_IM_combined.json"
+DATA_FILE = "../data/geonames/NO.json"
+GRID_FILE = "NO.json"
+FIG_SIZE = (5,8)
 
-with open(DATA_FILE) as data_file:
+with open(DATA_FILE, encoding="utf8") as data_file:
 	data = json.load(data_file)
 
-with open(GRID_FILE) as grid_file:
+with open(GRID_FILE, encoding="utf8") as grid_file:
 	grid = json.load(grid_file)
 
 #print(grid)
 
-fig = pyplot.figure(figsize=(5,8))
+fig = pyplot.figure(figsize=FIG_SIZE)
 #pyplot.axis("off")
 
 bgCsvStr = "east,north"

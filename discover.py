@@ -23,7 +23,7 @@ DATA_PATH = "data/geonames/NO.json"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
 BACKGROUND_PATH = "background/NO.csv"
-FIG_SIZE = (7,8)
+FIG_SIZE = (6.5,8)
 
 ## ===
 ## load data from JSON and CSV
@@ -194,8 +194,8 @@ for iNgram in range(nNgrams):
 		csvData +="\n"+ str(coord["north"]) +","+ str(coord["east"])
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
 	
-	pyplot.scatter(backgroundData["east"], backgroundData["north"], color=backgroundColour, s=8) # background data is wrong way around?
-	pyplot.scatter(csv["north"], csv["east"], facecolors="b", edgecolors="y", linewidth=0.3, s=20, marker="^")
+	pyplot.scatter(backgroundData["north"], backgroundData["east"], color=backgroundColour, s=8) # background data is wrong way around?
+	pyplot.scatter(csv["east"], csv["north"], facecolors="b", edgecolors="y", linewidth=0.3, s=20, marker="^")
 	fig.tight_layout()
 	
 	pyplot.savefig(GRAPH_PATH + str(iNgram + 1) +".png")

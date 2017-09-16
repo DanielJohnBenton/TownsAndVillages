@@ -26,10 +26,10 @@ DATA_PATH = "data/geonames/NO.json"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
 BACKGROUND_PATH = "background/NO.csv"
-FIG_SIZE = (6.5,8)
+FIG_SIZE = (6.5, 8)
 
 metaFile = open(GRAPH_PATH +"_meta.txt", "w")
-metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE))
+metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")")
 metaFile.close()
 
 ## ===

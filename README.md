@@ -170,6 +170,7 @@ The GeoNames UK data includes Britain and Northern Island. It also appears to ha
 Between the two data sources the maps are more or less similar, with as a general rule less positions appearing for the GeoNames data, but in the same areas and clusters.
 
 ## Thanks to
+- [GeoNames](http://www.geonames.org/)- The GeoNames geographical database covers all countries and contains over eleven million placenames that are available for download free of charge.
 - [UK Towns & Villages](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/) - Mike Simpson's Genealogy Site
 - [dwyl - english-words](https://github.com/dwyl/english-words) - 479k English wordlist
 - [clipboardy](https://github.com/sindresorhus/clipboardy) - copy/paste library for Node.js

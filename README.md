@@ -164,7 +164,7 @@ Notes:
 
 The data from Mike Simpson's site was filtered for 6-digit Ordnance Survey codes which were mostly towns and villages but did have some noise. The data included Britain and the Isle of Man. It was missing some villages I looked for such as Carsethorn and Colvend.
 
-The GeoNames UK data includes Britain and Northern Island. It also appears to have some data from other time zones (territories?) so I filtered any timezone not Europe/London. Isle of Man data was combined in from a separate GeoNames data file. The GeoNames data appears to have less ommissions and less noise. However, I have noticed some flaws. I have filtered this data by feature class "P" - populated places mostly cities, towns and villages, but with some noise remaining.
+The GeoNames UK data includes Britain and Northern Island. It also appears to have some data from other time zones (territories?) so I filtered any timezone not Europe/London. Isle of Man data was combined in from a separate GeoNames data file. The GeoNames data appears to have less omissions and less noise. However, I have noticed some flaws. I have filtered this data by feature class "P" - populated places mostly cities, towns and villages, but with some noise remaining.
 
 Between the two data sources the maps are more or less similar, with as a general rule less positions appearing for the GeoNames data, but in the same areas and clusters.
 

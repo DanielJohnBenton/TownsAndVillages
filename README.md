@@ -7,6 +7,7 @@
 - [Most common British place name components per n-gram size](https://github.com/DanielJohnBenton/TownsAndVillages#most-common-british-place-name-components-per-n-gram-size)
 - [Lengths of British place names](https://github.com/DanielJohnBenton/TownsAndVillages#lengths-of-british-place-names)
 - [Interesting links](https://github.com/DanielJohnBenton/TownsAndVillages#interesting-links)
+- [Data sources](https://github.com/DanielJohnBenton/TownsAndVillages#data-sources)
 - [Acknowledgements](https://github.com/DanielJohnBenton/TownsAndVillages#thanks-to)
 - [Technologies used](https://github.com/DanielJohnBenton/TownsAndVillages#technologies-used)
 

@@ -1,5 +1,6 @@
 ### this script discovers interesting clusters
 
+import gc
 import sys
 import math
 from io import StringIO
@@ -8,25 +9,25 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "Norway"
+README_INFO = "Germany"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
 # ngrams below and above these numbers in length of characters will not be considered
 NGRAM_MIN = 1
-NGRAM_MAX = 20
+NGRAM_MAX = 30
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 8
+MAX_SQUARES = 11
 MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 70
+INTERESTING_PERCENTAGE = 75
 SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 ## ===
 
-DATA_PATH = "data/geonames/NO.json"
+DATA_PATH = "data/geonames/DE.json"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-BACKGROUND_PATH = "background/NO.csv"
-FIG_SIZE = (6.5, 8)
+BACKGROUND_PATH = "background/DE.csv"
+FIG_SIZE = (7, 8)
 
 metaFile = open(GRAPH_PATH +"_meta.txt", "w")
 metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")")
@@ -209,6 +210,7 @@ for iNgram in range(nNgrams):
 	pyplot.close(fig)
 	
 	progressBar(iNgram + 1, nNgrams, 100)
+	gc.collect()
 ## ===
 
 print("")

@@ -15,7 +15,7 @@
 
 The quality of these is admittedly questionable.
 
-![loch, lake, llyn](images/coords_loch_lake_llyn.png)
+![bury, borough, burgh, brough](images/coords_bury_borough_burgh_brough.png)
 
 ![kirk, church, eglwys](images/kirk_church_eglwys.png)
 
@@ -24,25 +24,31 @@ The [etymology of the word kirk](https://en.wikipedia.org/wiki/Kirk#Basic_meanin
 ![Danelaw](images/danelaw_map.png)
 (Source: [Wikipedia](https://en.wikipedia.org/wiki/Danelaw))
 
+Known Danelaw place name parts include 'holm', 'thwaite', 'toft', 'thorpe' and places ending 'by'.
+
 ![holm](images/coords_holm.png)
 
-"Holm" - another Old Norse term that fits this pattern.
+![thorp](images/coords_thorp.png)
+
+![thwaite](images/coords_thwaite.png)
+
+![toft](images/coords_toft.png)
+
+![by, bie](images/coords_by_bie.png)
+
+![loch, lake](images/coords_loch_lake_llyn.png)
+
+![rivers](images/coords_rivers.png)
 
 ![sea](images/coords_sea.png)
 
 Few surprises here: a well-defined line is drawn around parts of the coast with place names mentioning the sea.
-
-![bury, borough, burgh, brough](images/coords_bury_borough_burgh_brough.png)
 
 ![inver, mouth, aber](images/coords_inver_mouth_aber.png)
 
 "Aber", "Mouth", and "Inver" all refer to river mouths. Interesting to note that "Aber" is shared between Scotland and Wales, while "Inver" is exclusively Scottish.
 
 ![green](images/coords_green.png)
-
-![thorp](images/coords_thorp.png)
-
-I suspect this to be [another Danelaw term](https://en.wiktionary.org/wiki/thorp#Etymology).
 
 ![-worth, -worthy](images/coords_worth_worthy.png)
 
@@ -64,15 +70,9 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![cwm](images/coords_cwm.png)
 
-![thwaite](images/coords_thwaite.png)
-
-![by, bie](images/coords_by_bie.png)
-
 ![nan](images/coords_nan.png)
 
 ![-cott, -cot](images/cott_cot.png)
-
-![rivers](images/coords_rivers.png)
 
 ![higher-, upper-](images/coords_higher_upper.png)
 
@@ -85,8 +85,6 @@ I have kept the version from the older dataset as the difference is much more ap
 ![wald, wold, weald](images/coords_wald_wold_weald.png)
 
 Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#English).
-
-![toft](images/coords_toft.png)
 
 ## Most common dictionary words in British place names
 

@@ -15,6 +15,8 @@
 
 The quality of these is admittedly questionable.
 
+![loch, lake](images/coords_loch_lake_llyn.png)
+
 ![bury, borough, burgh, brough](images/coords_bury_borough_burgh_brough.png)
 
 ![kirk, church, eglwys](images/kirk_church_eglwys.png)
@@ -35,8 +37,6 @@ Known Danelaw place name parts include 'holm', 'thwaite', 'toft', 'thorpe' and p
 ![toft](images/coords_toft.png)
 
 ![by, bie](images/coords_by_bie.png)
-
-![loch, lake](images/coords_loch_lake_llyn.png)
 
 ![rivers](images/coords_rivers.png)
 

@@ -30,13 +30,6 @@ let ALLOWED_TIMEZONE = "N/A"; // set to "N/A" if doesn't matter
 
 let FS = require("fs");
 
-let columns = {
-	name: 1,
-	latitude: 4,
-	longitude: 5,
-	
-};
-
 let inputFilePath = "data/geonames/"+ COUNTRY_CODE +".txt";
 let outputFilePath = "data/geonames/"+ COUNTRY_CODE +".json";
 

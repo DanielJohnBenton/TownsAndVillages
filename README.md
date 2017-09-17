@@ -86,6 +86,8 @@ I have kept the version from the older dataset as the difference is much more ap
 
 Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#English).
 
+![Bally](images/coords_bally.png)
+
 ## Most common dictionary words in British place names
 
 ![Most common dictionary words in place names](images/common_dictionary_words.png)

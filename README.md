@@ -169,7 +169,7 @@ Between the two data sources the maps are more or less similar, with as a genera
 - [Ore4444 on Stack Overflow](https://stackoverflow.com/questions/9961502/is-there-a-way-to-automatically-build-the-package-json-file-for-node-js-projects/13728837#13728837) - Is there a way to automatically build the package.json file for Node.js projects
 
 ## Technologies used
-- Code in JavaScript/Node.js and Python
-- Third-party libraries (JS): [clipboardy](https://github.com/sindresorhus/clipboardy)
+- Code in Python and JavaScript (Node.js)
 - Third-party libraries (Python): [Matplotlib](https://matplotlib.org/), [pandas](http://pandas.pydata.org/)
+- Third-party libraries (JS): [clipboardy](https://github.com/sindresorhus/clipboardy)
 - Graphs made using Microsoft Excel or Matplotlib

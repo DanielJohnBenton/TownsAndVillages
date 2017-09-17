@@ -34,17 +34,11 @@ Few surprises here: a well-defined line is drawn around parts of the coast with 
 
 ![bury, borough, burgh, brough](images/coords_bury_borough_burgh_brough.png)
 
-![hampton](images/coords_hampton.png)
-
 ![inver, mouth, aber](images/coords_inver_mouth_aber.png)
 
 "Aber", "Mouth", and "Inver" all refer to river mouths. Interesting to note that "Aber" is shared between Scotland and Wales, while "Inver" is exclusively Scottish.
 
 ![green](images/coords_green.png)
-
-"Green" appears to mostly occupy non-Danelaw areas of England.
-
-![ingdon](images/coords_ingdon.png)
 
 ![thorp](images/coords_thorp.png)
 
@@ -56,9 +50,7 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![chester, cester, caster](images/coords_chester_cester_caster.png)
 
-'Cester' seems like a southern variation, and 'caster' a northern variation. Uses of '[chester](https://en.wikipedia.org/wiki/Chester_(placename_element))' itself reach up to the [Antonine Wall](https://en.wikipedia.org/wiki/Antonine_Wall).
-
-![Antonine Wall](images/antonine_wall.png) (Source: [Wikipedia](https://en.wikipedia.org/wiki/Antonine_Wall))
+'Cester' seems like a southern variation, and 'caster' a northern variation. Uses of '[chester](https://en.wikipedia.org/wiki/Chester_(placename_element))' itself reach up into Northumbria.
 
 ![combe](images/coords_combe.png)
 
@@ -69,8 +61,6 @@ Interesting that "worth" is well spread over England but does not venture into S
 ![bourne](images/coords_bourne.png)
 
 ![stead](images/coords_stead.png)
-
-![pool](images/coords_pool.png)
 
 ![cwm](images/coords_cwm.png)
 
@@ -86,19 +76,17 @@ Interesting that "worth" is well spread over England but does not venture into S
 
 ![higher-, upper-](images/coords_higher_upper.png)
 
+I have kept the version from the older dataset as the difference is much more apparent.
+
 ![bister, setter](images/coords_bister_setter.png)
 
-![down, downs](images/coords_down_downs.png)
-
-![ley, ly, leigh, lee, lie](images/coords_ley_etc.png)
+![ley, ly, leigh](images/coords_ley_etc.png)
 
 ![wald, wold, weald](images/coords_wald_wold_weald.png)
 
 Weald is [Old/Middle English for "wood"](https://en.wiktionary.org/wiki/weald#English).
 
 ![toft](images/coords_toft.png)
-
-![garth](images/coords_garth.png)
 
 ## Most common dictionary words in British place names
 

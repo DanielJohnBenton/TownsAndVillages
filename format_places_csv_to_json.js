@@ -1,7 +1,7 @@
 "use strict";
 
-let COUNTRY_CODE = "NO";
-let ALLOWED_TIMEZONE = "N/A"; // set to "N/A" if doesn't matter
+let COUNTRY_CODE = "ES";
+let ALLOWED_TIMEZONE = ""; // set to "N/A" or "" if doesn't matter
 
 /*
 	COLUMNS
@@ -40,7 +40,7 @@ for(let i in csvData)
 {
 	let place = csvData[i].split("\t");
 	
-	if(place[6] == "P" && (place[17] == ALLOWED_TIMEZONE || ALLOWED_TIMEZONE == "N/A"))
+	if(place[6] == "P" && (place[17] == ALLOWED_TIMEZONE || ALLOWED_TIMEZONE == "N/A" || ALLOWED_TIMEZONE == ""))
 	{
 		data.push(
 			{

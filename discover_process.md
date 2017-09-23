@@ -53,10 +53,12 @@ These actions are carried out in the `grid` directory.
 - Set `README_INFO` to something informative e.g. `"Spain"`
 - Set `DATA_PATH` to the location of the Geonames JSON e.g. `"data/geonames/ES.json"`
 - Set `BACKGROUND_PATH` to the location of the background CSV e.g. `"background/ES.csv"`
+
+#### Other settings
+- Set the heuristics as desired
 - Set FIG_SIZE - if you carefully played with it in `grid/test.py` you may wish to re-use those numbers
+
+#### Run
 - Run `py discover.py`
 - Graphs should start to appear in `discoveries/graphs`
 - If the graphs appear too limited in scope, you may want to loosen up one or more of the heuristics settings
-
-#### Heuristics
-- Set the heuristics as desired

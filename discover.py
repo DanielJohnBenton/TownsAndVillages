@@ -15,11 +15,11 @@ README_INFO = "Germany"
 ## heuristics - preference given to over-selecting rather than under-selecting
 # ngrams below and above these numbers in length of characters will not be considered
 NGRAM_MIN = 1
-NGRAM_MAX = 30
+NGRAM_MAX = 1
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
 MAX_SQUARES = 11
 MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 75
+INTERESTING_PERCENTAGE = 1
 SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 ## ===
 
@@ -29,21 +29,25 @@ GRAPH_PATH = "discoveries/graphs/"
 BACKGROUND_PATH = "background/DE.csv"
 FIG_SIZE = (7, 8)
 
-metaFile = open(GRAPH_PATH +"_meta.txt", "w")
-metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")")
-metaFile.close()
-
 ## ===
 ## load data from JSON and CSV
 print("Loading data")
 
-# here are the place names, co-ordinates, and Ordnance Survey grid codes
+# here are the place names and co-ordinates
 with open(DATA_PATH, encoding="utf8") as data_file:
 	data = json.load(data_file)
 
 # place co-ordinates pre-formatted to be scatter plotted as a grey background/outline of Britain
 backgroundData = pandas.read_csv(BACKGROUND_PATH)
 backgroundColour = "#e2e2e2"
+## ===
+
+## ===
+print("Creating meta file")
+
+metaFile = open(GRAPH_PATH +"_meta.txt", "w")
+metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")")
+metaFile.close()
 ## ===
 
 ## ===
@@ -202,7 +206,7 @@ for iNgram in range(nNgrams):
 		csvData +="\n"+ str(coord["north"]) +","+ str(coord["east"])
 	csv = pandas.read_csv(StringIO(csvData), sep=",")
 	
-	pyplot.scatter(backgroundData["north"], backgroundData["east"], color=backgroundColour, s=8) # background data is wrong way around?
+	pyplot.scatter(backgroundData["east"], backgroundData["north"], color=backgroundColour, s=8)
 	pyplot.scatter(csv["east"], csv["north"], facecolors="b", edgecolors="y", linewidth=0.3, s=20, marker="^")
 	fig.tight_layout()
 	

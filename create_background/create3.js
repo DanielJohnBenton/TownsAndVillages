@@ -2,9 +2,9 @@
 
 let FS = require("fs");
 
-let data = JSON.parse(FS.readFileSync("../data/geonames/GB_IM_combined.json", "utf8"));
+let data = JSON.parse(FS.readFileSync("../data/geonames/DE.json", "utf8"));
 
-let csv = "east,north";
+let csv = "north,east";
 
 for(let i = 0; i < data.length; i++)
 {

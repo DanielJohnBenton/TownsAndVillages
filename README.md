@@ -140,7 +140,7 @@ Notes:
 
 ### Other maps
 - [Mapping Vikings through British Isles Placenames](https://jalapic.github.io/vikings) - James Curley
-- [https://hillforts.arch.ox.ac.uk/] - Atlas of Hillforts of Britain and Ireland
+- [Atlas of Hillforts of Britain and Ireland](https://hillforts.arch.ox.ac.uk/)
 - [The History of the British Isles: Every Year](https://www.youtube.com/watch?v=xwPVk72GLfY) - Ollie Bye - YouTube
 - [Britain & Ireland drawn from pubs](http://ramiro.org/notebook/mapping-pubs/) - Ramiro Gómez
 

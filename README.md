@@ -146,6 +146,7 @@ Notes:
 - [Glossary of Scandinavian origins of place names in Britain](https://www.ordnancesurvey.co.uk/resources/historical-map-resources/scandinavian-glossary.html) - Ordnance Survey
 - [Talk of the town: The etymology of UK places](http://www.independent.co.uk/news/uk/this-britain/talk-of-the-town-the-etymology-of-uk-places-2277630.html) - The Independent
 - [List of United Kingdom county name etymologies](https://en.wikipedia.org/wiki/List_of_United_Kingdom_county_name_etymologies) - Wikipedia
+- [The History of the British Isles: Every Year](https://www.youtube.com/watch?v=xwPVk72GLfY) - Ollie Bye - YouTube
 
 ## Data sources
 - Earlier Britain graphs created using the data from [Mike Simpson's Genealogy Site](http://freepages.genealogy.rootsweb.ancestry.com/~agene/locations/).

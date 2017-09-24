@@ -9,25 +9,25 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "Germany"
+README_INFO = "Japan"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
 # ngrams below and above these numbers in length of characters will not be considered
 NGRAM_MIN = 1
-NGRAM_MAX = 1
+NGRAM_MAX = 30
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 11
+MAX_SQUARES = 6
 MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 1
+INTERESTING_PERCENTAGE = 80
 SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 ## ===
 
-DATA_PATH = "data/geonames/DE.json"
+DATA_PATH = "data/geonames/JP.json"
+BACKGROUND_PATH = "background/JP.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-BACKGROUND_PATH = "background/DE.csv"
-FIG_SIZE = (7, 8)
+FIG_SIZE = (8.7, 9)
 
 ## ===
 ## load data from JSON and CSV
@@ -56,6 +56,8 @@ print("Preliminary analysis")
 
 ngrams = []
 lookup = {}
+
+maxCount = 1
 
 for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 	for place in data:
@@ -92,9 +94,11 @@ for size in range(NGRAM_MIN, NGRAM_MAX + 1):
 		for iKey in range(len(keys)):
 			key = keys[iKey]
 			if key in lookup:
-				ngrams[lookup[key]]["count"] += 1
 				ngrams[lookup[key]]["squares"].append(square)
 				ngrams[lookup[key]]["coords"].append({ "north": place["latitude"], "east": place["longitude"] })
+				ngrams[lookup[key]]["count"] += 1
+				if ngrams[lookup[key]]["count"] > maxCount:
+					maxCount = ngrams[lookup[key]]["count"]
 			else:
 				lookup[key] = len(ngrams)
 				position = key.split("_")[0]
@@ -151,7 +155,7 @@ print("Sorting data")
 
 if SORT_MODE == "INTERESTING":
 	# sort for some sort of "interestingness", although this is difficult
-	ngrams.sort(key=lambda x: (x["interestingSquareCount"] / x["count"], len(x["ngram"]) * -1))
+	ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

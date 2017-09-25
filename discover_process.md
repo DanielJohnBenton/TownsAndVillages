@@ -9,6 +9,7 @@ Copy `ES.txt` to a relative path `data/geonames`.
 
 - Set `COUNTRY_CODE` to the file name's country code e.g `"ES"`
 - Set the ALLOWED_TIMEZONE if you want to filter to just one time zone, otherwise set to `"N/A"` or `""`
+- Set the MIN_LATITUDE to a minimum number e.g. `-36` if you want, otherwise `"N/A"` or `""`
 - Run `node format_places_csv_to_json`
 
 This will create ES.json in the `data/geonames` directory.

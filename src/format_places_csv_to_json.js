@@ -1,7 +1,17 @@
 "use strict";
 
-let COUNTRY_CODE = "ES";
-let ALLOWED_TIMEZONE = ""; // set to "N/A" or "" if doesn't matter
+let COUNTRY_CODE = "ZA";
+let ALLOWED_TIMEZONE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MIN_LATITUDE = -40; // set to "N/A" or "" if doesn't matter (case sensitive!)
+
+if(ALLOWED_TIMEZONE == "")
+{
+	ALLOWED_TIMEZONE = "N/A";
+}
+if(MIN_LATITUDE == "")
+{
+	MIN_LATITUDE = "N/A";
+}
 
 /*
 	COLUMNS
@@ -40,7 +50,11 @@ for(let i in csvData)
 {
 	let place = csvData[i].split("\t");
 	
-	if(place[6] == "P" && (place[17] == ALLOWED_TIMEZONE || ALLOWED_TIMEZONE == "N/A" || ALLOWED_TIMEZONE == ""))
+	if(
+		place[6] == "P" &&
+		(place[17] == ALLOWED_TIMEZONE || ALLOWED_TIMEZONE == "N/A") &&
+		(MIN_LATITUDE == "N/A" || place[4] > MIN_LATITUDE)
+	)
 	{
 		data.push(
 			{

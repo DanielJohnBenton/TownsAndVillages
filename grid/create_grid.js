@@ -2,10 +2,10 @@
 
 let FS = require("fs");
 
-let NX = 7;
-let NY = 13;
-let FILE = "../data/geonames/GB_IM_combined.json";
-let REF = "GB_IM_combined";
+let NX = 10;
+let NY = 10;
+let FILE = "../data/geonames/FR.json";
+let REF = "FR";
 
 let data = JSON.parse(FS.readFileSync(FILE, "utf8"));
 
@@ -64,4 +64,4 @@ for(let x = minX; x < maxX; x += intervalX)
 	}
 }
 
-FS.writeFileSync(REF +".json", JSON.stringify(grid), "utf8");
+FS.writeFileSync("grids/"+ REF +".json", JSON.stringify(grid), "utf8");

@@ -34,7 +34,7 @@ These actions are carried out in the `grid` directory.
 #### apply_grid.js
 *Warning*: Be careful with this as it will alter your data JSON. If you think a data JSON is compromised, delete it, as it can always be reproduced from the original Geonames file.
 - Set `DATA_FILE` to the location of your Geonames data JSON e.g. `"../data/geonames/ES.json"`
-- Set `GRID_FILE` to the location of your new grid file e.g. `"ES.json"`
+- Set `GRID_FILE` to the location of your new grid file e.g. `"grids/ES.json"`
 - Run `node apply_grid`
 
 ### create_background

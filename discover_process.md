@@ -56,7 +56,7 @@ These actions are carried out in the `grid` directory.
 
 #### Other settings
 - Set the heuristics as desired
-- Set FIG_SIZE - if you carefully played with it in `grid/test.py` you may wish to re-use those numbers
+- Set FIG_SIZE - if you carefully played with it in `grid/test.py` you may wish to re-use those numbers - however those may have been distorted somewhat by the grid points
 
 #### Run
 - Run `py discover.py`

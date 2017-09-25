@@ -25,7 +25,7 @@ These actions are carried out in the `grid` directory.
 
 #### test.py
 - Set `DATA_FILE` to the location of your Geonames data JSON e.g. `"../data/geonames/ES.json"`
-- Set `GRID_FILE` to the location of your new grid file e.g. `"ES.json"`
+- Set `GRID_FILE` to the location of your new grid file e.g. `"grids/ES.json"`
 - Set `FIG_SIZE` to the dimensions for your map - this will take a bit of trial and error. Start with a square and adjust from there
 - Run `py test.py`
 - If you don't like the grid, you can adjust `create_grid.js` and re-run these steps

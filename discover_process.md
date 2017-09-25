@@ -19,8 +19,8 @@ These actions are carried out in the `grid` directory.
 
 #### create_grid.js
 - Set `FILE` to the path to the new JSON file e.g. `"../data/geonames/ES.json"`
-- Set `NX` and `NY` to the number of squares you want in the grid along each axis
 - Set `REF` to something meaningful e.g. `ES` to determine the name of the output file *Warning*: if you use the same `REF` twice, the first file will be overwritten.
+- Set `NX` and `NY` to the number of squares you want in the grid along each axis
 - Run `node create_grid`. This will create a JSON file with `REF` in the name
 
 #### test.py

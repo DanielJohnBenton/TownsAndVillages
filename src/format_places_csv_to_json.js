@@ -1,8 +1,10 @@
 "use strict";
 
-let COUNTRY_CODE = "ZA";
+let COUNTRY_CODE = "US_P_only";
 let ALLOWED_TIMEZONE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
-let MIN_LATITUDE = -40; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MIN_LATITUDE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MIN_LONGITUDE = -127; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MAX_LONGITUDE = -50; // set to "N/A" or "" if doesn't matter (case sensitive!)
 
 if(ALLOWED_TIMEZONE == "")
 {
@@ -53,7 +55,9 @@ for(let i in csvData)
 	if(
 		place[6] == "P" &&
 		(place[17] == ALLOWED_TIMEZONE || ALLOWED_TIMEZONE == "N/A") &&
-		(MIN_LATITUDE == "N/A" || place[4] > MIN_LATITUDE)
+		(MIN_LATITUDE == "N/A" || place[4] >= MIN_LATITUDE) &&
+		(MIN_LONGITUDE == "N/A" || place[5] >= MIN_LONGITUDE) &&
+		(MAX_LONGITUDE == "N/A" || place[5] <= MAX_LONGITUDE)
 	)
 	{
 		data.push(
@@ -65,5 +69,6 @@ for(let i in csvData)
 		);
 	}
 }
+
 
 FS.writeFileSync(outputFilePath, JSON.stringify(data), "utf8");

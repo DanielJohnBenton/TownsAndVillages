@@ -1,8 +1,10 @@
 "use strict";
 
+let DATA_PATH = "../data/geonames/IT.json";
+
 let FS = require("fs");
 
-let data = JSON.parse(FS.readFileSync("../data/geonames/DE.json", "utf8"));
+let data = JSON.parse(FS.readFileSync(DATA_PATH, "utf8"));
 
 let csv = "north,east";
 

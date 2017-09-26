@@ -41,7 +41,7 @@ These actions are carried out in the `grid` directory.
 ### create_background
 
 - Go to the folder `create_background`
-- Update the file path in `create3.js` to the correct data file e.g. `"../data/geonames/ES.json"`
+- Update `DATA_PATH` in `create3.js` to the location of the data file e.g. `"../data/geonames/ES.json"`
 - Run `node create3` *WARNING*: This will overwrite the contents of `_background.csv`
 - Copy the new/updated file `_background.csv` into the `background` folder
 - Rename the file there to something more meaningful e.g. `ES.csv`

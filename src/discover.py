@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "US mainland"
+README_INFO = "Italy"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
@@ -17,17 +17,17 @@ README_INFO = "US mainland"
 NGRAM_MIN = 1
 NGRAM_MAX = 30
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 7
+MAX_SQUARES = 12
 MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 75
-SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
+SORT_MODE = "SQUARES" # "INTERESTING", "NAME", "SQUARES"
 ## ===
 
-DATA_PATH = "data/geonames/US_P_only.json"
-BACKGROUND_PATH = "background/US_mainland.csv"
+DATA_PATH = "data/geonames/IT.json"
+BACKGROUND_PATH = "background/IT.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-FIG_SIZE = (12, 7)
+FIG_SIZE = (7.3, 10)
 
 ## ===
 ## load data from JSON and CSV
@@ -153,9 +153,13 @@ nNgrams = len(ngrams)
 ## sort data for display
 print("Sorting data")
 
-if SORT_MODE == "INTERESTING":
-	# sort for some sort of "interestingness", although this is difficult
-	ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
+if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES":
+	if SORT_MODE == "INTERESTING":
+		# sort for some sort of "interestingness", although this is difficult
+		ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
+	else:
+		# sort with preferential treatment to less squares used to reach INTERESTING_PERCENTAGE
+		ngrams.sort(key=lambda x: (x["interestingSquareCount"], (((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

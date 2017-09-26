@@ -70,5 +70,6 @@ for(let i in csvData)
 	}
 }
 
+console.log("Places: "+ data.length);
 
 FS.writeFileSync(outputFilePath, JSON.stringify(data), "utf8");

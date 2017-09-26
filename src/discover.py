@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "Japan"
+README_INFO = "US mainland"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
@@ -17,17 +17,17 @@ README_INFO = "Japan"
 NGRAM_MIN = 1
 NGRAM_MAX = 30
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 6
+MAX_SQUARES = 7
 MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 80
+INTERESTING_PERCENTAGE = 75
 SORT_MODE = "INTERESTING" # "INTERESTING", "NAME"
 ## ===
 
-DATA_PATH = "data/geonames/JP.json"
-BACKGROUND_PATH = "background/JP.csv"
+DATA_PATH = "data/geonames/US_P_only.json"
+BACKGROUND_PATH = "background/US_mainland.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-FIG_SIZE = (8.7, 9)
+FIG_SIZE = (12, 7)
 
 ## ===
 ## load data from JSON and CSV
@@ -203,7 +203,7 @@ for iNgram in range(nNgrams):
 	
 	fig = pyplot.figure(figsize=FIG_SIZE)
 	pyplot.axis("off")
-	fig.suptitle("Please names "+ ngram["position"] +" ' "+ ngram["ngram"] +" '")
+	fig.suptitle("Place names "+ ngram["position"] +" ' "+ ngram["ngram"] +" '")
 	
 	csvData = "north,east"
 	for coord in ngram["coords"]:

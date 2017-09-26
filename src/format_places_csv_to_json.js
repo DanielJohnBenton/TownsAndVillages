@@ -1,10 +1,10 @@
 "use strict";
 
-let COUNTRY_CODE = "US_P_only";
+let COUNTRY_CODE = "IT";
 let ALLOWED_TIMEZONE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
 let MIN_LATITUDE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
-let MIN_LONGITUDE = -127; // set to "N/A" or "" if doesn't matter (case sensitive!)
-let MAX_LONGITUDE = -50; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MIN_LONGITUDE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
+let MAX_LONGITUDE = ""; // set to "N/A" or "" if doesn't matter (case sensitive!)
 
 if(ALLOWED_TIMEZONE == "")
 {
@@ -13,6 +13,14 @@ if(ALLOWED_TIMEZONE == "")
 if(MIN_LATITUDE == "")
 {
 	MIN_LATITUDE = "N/A";
+}
+if(MIN_LONGITUDE == "")
+{
+	MIN_LONGITUDE = "N/A";
+}
+if(MAX_LONGITUDE == "")
+{
+	MAX_LONGITUDE = "N/A";
 }
 
 /*

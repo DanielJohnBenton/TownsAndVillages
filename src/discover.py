@@ -219,7 +219,7 @@ for iNgram in range(nNgrams):
 	
 	fig = pyplot.figure(figsize=FIG_SIZE)
 	pyplot.axis("off")
-	fig.suptitle("Place names "+ ngram["position"] +" ' "+ ngram["ngram"] +" '")
+	fig.suptitle("Place names "+ ngram["position"] +" \" "+ ngram["ngram"] +" \"")
 	
 	csvData = "north,east"
 	for coord in ngram["coords"]:

@@ -20,7 +20,7 @@ NGRAM_MAX = 30
 MAX_SQUARES = 12
 MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 75
-SORT_MODE = "SQUARES" # "INTERESTING", "NAME", "SQUARES"
+SORT_MODE = "POSITION" # "INTERESTING", "NAME", "SQUARES", "POSITION"
 ## ===
 
 DATA_PATH = "data/geonames/IT.json"
@@ -153,13 +153,25 @@ nNgrams = len(ngrams)
 ## sort data for display
 print("Sorting data")
 
-if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES":
+if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITION":
 	if SORT_MODE == "INTERESTING":
 		# sort for some sort of "interestingness", although this is difficult
 		ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
-	else:
+	elif SORT_MODE == "SQUARES":
 		# sort with preferential treatment to less squares used to reach INTERESTING_PERCENTAGE
 		ngrams.sort(key=lambda x: (x["interestingSquareCount"], -x["count"], -len(x["ngram"])))
+	else:
+		# sort by coordinates
+		for iNgram in range(nNgrams):
+			totalLatitude = 0
+			totalLongitude = 0
+			for position in ngrams[iNgram]["coords"]:
+				totalLatitude += float(position["north"])
+				totalLongitude += float(position["east"])
+			ngrams[iNgram]["averageLatitude"] = totalLatitude / nNgrams
+			ngrams[iNgram]["averageLongitude"] = totalLongitude / nNgrams
+		#ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -x["count"], -len(x["ngram"])))
+		ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"]))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

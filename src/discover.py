@@ -171,7 +171,7 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 			ngrams[iNgram]["averageLatitude"] = totalLatitude / nNgrams
 			ngrams[iNgram]["averageLongitude"] = totalLongitude / nNgrams
 		#ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -x["count"], -len(x["ngram"])))
-		ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"]))
+		ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

@@ -15,11 +15,11 @@ README_INFO = "Italy"
 ## heuristics - preference given to over-selecting rather than under-selecting
 # ngrams below and above these numbers in length of characters will not be considered
 NGRAM_MIN = 1
-NGRAM_MAX = 30
+NGRAM_MAX = 100
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 12
+MAX_SQUARES = 9
 MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 75
+INTERESTING_PERCENTAGE = 80
 SORT_MODE = "POSITION" # "INTERESTING", "NAME", "SQUARES", "POSITION"
 ## ===
 
@@ -171,7 +171,7 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 			ngrams[iNgram]["averageLatitude"] = totalLatitude / nNgrams
 			ngrams[iNgram]["averageLongitude"] = totalLongitude / nNgrams
 		#ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -x["count"], -len(x["ngram"])))
-		ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"], -len(x["ngram"])))
+		ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

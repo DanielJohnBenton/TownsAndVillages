@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "Italy"
+README_INFO = "UK"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
@@ -17,17 +17,17 @@ README_INFO = "Italy"
 NGRAM_MIN = 1
 NGRAM_MAX = 100
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 9
+MAX_SQUARES = 8
 MIN_POSITIONS = 15
 INTERESTING_PERCENTAGE = 80
-SORT_MODE = "POSITION" # "INTERESTING", "NAME", "SQUARES", "POSITION"
+SORT_MODE = "POSITION_SQUARE" # "INTERESTING", "NAME", "SQUARES", "POSITION_LONGITUDE", "POSITION_LATITUDE", "POSITION_SQUARE"
 ## ===
 
-DATA_PATH = "data/geonames/IT.json"
-BACKGROUND_PATH = "background/IT.csv"
+DATA_PATH = "data/geonames/GB_IM_combined.json"
+BACKGROUND_PATH = "background/UK.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-FIG_SIZE = (7.3, 10)
+FIG_SIZE = (6, 9)
 
 ## ===
 ## load data from JSON and CSV
@@ -128,7 +128,17 @@ for iNgram in range(len(ngrams)):
 		else:
 			lookup[square] = len(ngrams[iNgram]["squareCounts"])
 			ngrams[iNgram]["squareCounts"].append(1)
-		
+	
+	mostSquare = [-1, -1]
+	secondMostSquare = [-1, -1]
+	for square in ngrams[iNgram]["squares"]:
+		if ngrams[iNgram]["squareCounts"][lookup[square]] > mostSquare[1]:
+			secondMostSquare = mostSquare
+			mostSquare[0] = square
+			mostSquare[1] = ngrams[iNgram]["squareCounts"][lookup[square]]
+	ngrams[iNgram]["mostSquare"] = mostSquare[0]
+	ngrams[iNgram]["secondMostSquare"] = secondMostSquare[0]
+	
 	ngrams[iNgram]["squareCounts"].sort(key=int, reverse=True)
 	
 	total = 0
@@ -153,14 +163,14 @@ nNgrams = len(ngrams)
 ## sort data for display
 print("Sorting data")
 
-if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITION":
+if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITION_LONGITUDE" or SORT_MODE == "POSITION_LATITUDE" or SORT_MODE == "POSITION_SQUARE":
 	if SORT_MODE == "INTERESTING":
 		# sort for some sort of "interestingness", although this is difficult
 		ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
 	elif SORT_MODE == "SQUARES":
 		# sort with preferential treatment to less squares used to reach INTERESTING_PERCENTAGE
 		ngrams.sort(key=lambda x: (x["interestingSquareCount"], -x["count"], -len(x["ngram"])))
-	else:
+	elif SORT_MODE == "POSITION_LONGITUDE" or SORT_MODE == "POSITION_LATITUDE":
 		# sort by coordinates
 		for iNgram in range(nNgrams):
 			totalLatitude = 0
@@ -170,8 +180,13 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 				totalLongitude += float(position["east"])
 			ngrams[iNgram]["averageLatitude"] = totalLatitude / nNgrams
 			ngrams[iNgram]["averageLongitude"] = totalLongitude / nNgrams
-		#ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -x["count"], -len(x["ngram"])))
-		ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -len(x["ngram"])))
+		if SORT_MODE == "POSITION_LATITUDE":
+			ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -len(x["ngram"])))
+		else:
+			ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"], -len(x["ngram"])))
+	else:
+		# sort by most populated square
+		ngrams.sort(key=lambda x: (x["mostSquare"], x["secondMostSquare"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

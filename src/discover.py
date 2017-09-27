@@ -159,7 +159,7 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES":
 		ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
 	else:
 		# sort with preferential treatment to less squares used to reach INTERESTING_PERCENTAGE
-		ngrams.sort(key=lambda x: (x["interestingSquareCount"], (((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
+		ngrams.sort(key=lambda x: (x["interestingSquareCount"], -x["count"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

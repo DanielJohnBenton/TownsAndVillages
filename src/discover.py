@@ -224,6 +224,7 @@ print("Creating meta index file")
 metaIndex = ""
 
 for iNgram in range(nNgrams):
+	metaIndex += str(iNgram + 1) +"\t"+ ngrams[iNgram]["ngram"] +"\n"
 
 metaIndexFile = open(GRAPH_PATH +"_meta_index.txt", "w", encoding="utf8")
 metaIndexFile.write(metaIndex)

@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "Norway"
+README_INFO = "Denmark"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
@@ -17,17 +17,17 @@ README_INFO = "Norway"
 NGRAM_MIN = 1
 NGRAM_MAX = 100
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 9
+MAX_SQUARES = 25
 MIN_POSITIONS = 10
-INTERESTING_PERCENTAGE = 75
-SORT_MODE = "INTERESTING" # "INTERESTING", "NAME", "SQUARES", "POSITION_LONGITUDE", "POSITION_LATITUDE", "POSITION_SQUARE", "COUNT"
+INTERESTING_PERCENTAGE = 85
+SORT_MODE = "COUNT" # "INTERESTING", "NAME", "SQUARES", "POSITION_LONGITUDE", "POSITION_LATITUDE", "POSITION_SQUARE", "COUNT"
 ## ===
 
-DATA_PATH = "data/geonames/NO.json"
-BACKGROUND_PATH = "background/NO.csv"
+DATA_PATH = "data/geonames/DK.json"
+BACKGROUND_PATH = "background/DK.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-FIG_SIZE = (8.5, 9)
+FIG_SIZE = (12, 9)
 
 ## ===
 ## load data from JSON and CSV
@@ -163,7 +163,7 @@ nNgrams = len(ngrams)
 ## sort data for display
 print("Sorting data")
 
-if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITION_LONGITUDE" or SORT_MODE == "POSITION_LATITUDE" or SORT_MODE == "POSITION_SQUARE":
+if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITION_LONGITUDE" or SORT_MODE == "POSITION_LATITUDE" or SORT_MODE == "POSITION_SQUARE" or SORT_MODE == "COUNT":
 	if SORT_MODE == "INTERESTING":
 		# sort for some sort of "interestingness", although this is difficult
 		ngrams.sort(key=lambda x: ((((MAX_SQUARES / x["interestingSquareCount"]) + (maxCount / x["count"])) / 2), len(x["ngram"]) * -1))
@@ -189,7 +189,7 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 		ngrams.sort(key=lambda x: (x["mostSquare"], x["secondMostSquare"], -len(x["ngram"])))
 	else:
 		# sort by count
-		ngrams.sort(key=lambda x: (x["count"], -len(x["ngram"])))
+		ngrams.sort(key=lambda x: (-x["count"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

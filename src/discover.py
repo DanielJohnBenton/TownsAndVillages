@@ -45,7 +45,7 @@ backgroundColour = "#e2e2e2"
 ## ===
 print("Creating meta file")
 
-metaFile = open(GRAPH_PATH +"_meta.txt", "w")
+metaFile = open(GRAPH_PATH +"_meta.txt", "w", encoding="utf8")
 metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")\nSort mode: "+ SORT_MODE)
 metaFile.close()
 ## ===
@@ -216,6 +216,18 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 else:
 	# sort by name alphabetically
 	ngrams.sort(key=lambda x: (-len(x["ngram"]), x["ngram"].lower()))
+## ===
+
+## ===
+print("Creating meta index file")
+
+metaIndex = ""
+
+for iNgram in range(nNgrams):
+
+metaIndexFile = open(GRAPH_PATH +"_meta_index.txt", "w", encoding="utf8")
+metaIndexFile.write(metaIndex)
+metaIndexFile.close()
 ## ===
 
 ## ===

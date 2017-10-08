@@ -9,7 +9,7 @@ import pandas
 import matplotlib.pyplot as pyplot
 
 # brief description of purpose
-README_INFO = "UK"
+README_INFO = "Norway"
 
 ## ===
 ## heuristics - preference given to over-selecting rather than under-selecting
@@ -17,17 +17,17 @@ README_INFO = "UK"
 NGRAM_MIN = 1
 NGRAM_MAX = 100
 # if the ngram has at least MIN_POSITIONS, and INTERESTING_PERCENTAGE of them are within MAX_SQUARES, it will be considered interesting
-MAX_SQUARES = 8
-MIN_POSITIONS = 15
-INTERESTING_PERCENTAGE = 80
-SORT_MODE = "POSITION_SQUARE" # "INTERESTING", "NAME", "SQUARES", "POSITION_LONGITUDE", "POSITION_LATITUDE", "POSITION_SQUARE"
+MAX_SQUARES = 9
+MIN_POSITIONS = 10
+INTERESTING_PERCENTAGE = 75
+SORT_MODE = "INTERESTING" # "INTERESTING", "NAME", "SQUARES", "POSITION_LONGITUDE", "POSITION_LATITUDE", "POSITION_SQUARE", "COUNT"
 ## ===
 
-DATA_PATH = "data/geonames/GB_IM_combined.json"
-BACKGROUND_PATH = "background/UK.csv"
+DATA_PATH = "data/geonames/NO.json"
+BACKGROUND_PATH = "background/NO.csv"
 # where graphs are saved
 GRAPH_PATH = "discoveries/graphs/"
-FIG_SIZE = (6, 9)
+FIG_SIZE = (8.5, 9)
 
 ## ===
 ## load data from JSON and CSV
@@ -46,7 +46,7 @@ backgroundColour = "#e2e2e2"
 print("Creating meta file")
 
 metaFile = open(GRAPH_PATH +"_meta.txt", "w")
-metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")")
+metaFile.write(README_INFO +"\nData path: "+ DATA_PATH +" (background: "+ BACKGROUND_PATH +")\nN-gram sizes: "+ str(NGRAM_MIN) +"-"+ str(NGRAM_MAX) +"\nMax squares: "+ str(MAX_SQUARES) +"\nMin positions: "+ str(MIN_POSITIONS) +"\nInteresting percentage: "+ str(INTERESTING_PERCENTAGE) +"\nFig size: ("+ str(FIG_SIZE[0]) +", "+ str(FIG_SIZE[1]) +")\nSort mode: "+ SORT_MODE)
 metaFile.close()
 ## ===
 
@@ -184,9 +184,12 @@ if SORT_MODE == "INTERESTING" or SORT_MODE == "SQUARES" or SORT_MODE == "POSITIO
 			ngrams.sort(key=lambda x: (x["averageLatitude"], x["averageLongitude"], -len(x["ngram"])))
 		else:
 			ngrams.sort(key=lambda x: (x["averageLongitude"], x["averageLatitude"], -len(x["ngram"])))
-	else:
+	elif SORT_MODE == "POSITION_SQUARE":
 		# sort by most populated square
 		ngrams.sort(key=lambda x: (x["mostSquare"], x["secondMostSquare"], -len(x["ngram"])))
+	else:
+		# sort by count
+		ngrams.sort(key=lambda x: (x["count"], -len(x["ngram"])))
 
 	# group identical n-grams together so it is immediately apparent which graph to choose if multiple positions are deemed interesting
 	# for example, if you have "contains" and "ending", "ending" might be more interesting, but it's harder to keep this in mind for graphs far apart in a list of thousands

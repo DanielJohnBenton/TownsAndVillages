@@ -2,6 +2,8 @@ MIT License
 
 Copyright (c) 2017 Daniel John Benton
 
+PLEASE NOTE - This licence applies ONLY to my own creations and not images otherwise attributed to other people/organisations. These will be clearly attributed in the repository where used/linked.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
